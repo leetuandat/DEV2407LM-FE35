@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thông tin chi tiết sinh viên</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%; 
+    }
+    td, th {
+      padding: 8px;
+      text-align: center;
+    }
+    caption {
+      font-size: 1.5em;
+      margin: 10px;
+    }
+    .avatar {
+      width: 30%; 
+    }
+    .info {
+      width: 70%; 
+    }
+  </style>
+</head>
+
+<body>
+  <table width="500" border="1">
+    <caption>
+      <h2>Thông tin chi tiết</h2>
+    </caption>
+    <tr>
+      <td class="avatar" rowspan="5">
+        <img src="./images/Avatar.png" alt="Avatar" width="100%">
+      </td>
+      <td class="info" colspan="4">Ngày sinh: 28/02/1997</td>
+    </tr>
+    <tr>
+      <th colspan="3">Điểm thi</th>
+      <th rowspan="2">Điểm TB</th>
+    </tr>
+    <tr>
+      <td>Toán</td>
+      <td>Văn</td>
+      <td>Anh</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>8</td>
+      <td>7</td>
+      <td>8</td>
+    </tr>
+  </table>
+</body>
+
+</html>
