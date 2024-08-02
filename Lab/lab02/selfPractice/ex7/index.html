@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài tập 7 - To Do List</title>
+</head>
+
+<body>
+
+  <form action="" method="post">
+    <legend>To Do List</legend>
+    <hr>
+    <table style="width: 100%;">
+      <tbody>
+        <tr>
+          <td colspan="2">
+            <label for="item">Item</label><br>
+            <input type="text" id="item" style="width: 100%">
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="2">
+            <label for="desc">Description</label><br>
+            <input type="text" id="desc" style="width: 100%; height: 4rem;">
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="priority">Priority</label>
+            <br>
+            <select name="priority" id="priority">
+              <option value="Low">Low</option>
+              <option value="medium">Medium</option>
+              <option value="high">High</option>
+              <option value="" hidden>------------------------------------------------</option>
+            </select>
+          </td>
+          <td>
+            <label for="category">Category</label>
+            <br>
+            <select name="category" id="category">
+              <option value="personal">Personal</option>
+              <option value="work">Work</option>
+              <option value="student">Student</option>
+              <option value="" hidden>------------------------------------------------</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <label for="">Due Date</label>
+            <br>
+            <input style="width: 2rem" type="text" name="day" id="day"> /
+            <input style="width: 2rem" type="text" name="month" id="month"> /
+            <input style="width: 4rem" type="text" name="year" id="year">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="">Status</label>
+            <br>
+            <input type="checkbox" id="done">
+            <label for="done">Done.</label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="submit" name="submit" id="submit">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+
+</body>
+
+</html>
