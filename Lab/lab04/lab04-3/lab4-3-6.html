@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Document</title>
+</head>
+
+<body>
+
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      font-size: 18px;
+      color: black;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    ul {
+      width: 200px;
+      height: 400px;
+    }
+
+    nav {
+      border: solid 1px #ccc;
+    }
+
+    nav>ul>li {
+      list-style-type: none;
+    }
+
+    nav>ul {
+      border: 1px solid red;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      padding: 10px;
+    }
+
+    .sub-menu {
+      position: absolute;
+      top: 0;
+      left: 116%;
+      display: none;
+    }
+
+    .sub-menu li {
+      margin-right: 20px;
+    }
+
+    .sub-menu ul {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
+
+    nav li:hover .sub-menu {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      /* border: 1px solid #ccc; */
+    }
+
+    nav>ul>li:hover {
+      background-color: red;
+      cursor: pointer;
+    }
+
+    nav>ul>li:hover>a {
+      color: white;
+    }
+
+  </style>
+
+  <nav>
+    <ul>
+      <li>
+        <a href="#"><span><i class="fa-solid fa-cash-register"></i></span> Điện máy</a>
+      </li>
+      <li>
+        <a href="#"><span><i class="fa-solid fa-cash-register"></i></span>Đồ gia dụng</a>
+      </li>
+      <li>
+        <a href="#"><span><i class="fa-solid fa-cash-register"></i></span>Công cụ & Dụng cụ</a>
+            <ul class="sub-menu">
+              <h4>Máy khoan</h4>
+              <li><a href="#">Máy khoan pin</a></li>
+              <li><a href="#">Máy khoan động lực</a></li>
+              <li><a href="#">Máy khoan bê tông, Máy khoan búa</a></li>
+              <li><a href="#">Máy đục bê tông</a></li>
+              <li><a href="#">Máy khoan cầm tay gia đình</a></li>
+              <li><a href="#">Máy khoan mini</a></li>
+              <li><a href="#">Máy khoan rút lõi bê tông</a></li>
+              <li><a href="#">Máy khoan góc</a></li>
+              <li><a href="#">Máy khoan bàn</a></li>
+              <li><a href="#">Máy khoan từ</a></li>
+              <li><a href="#">Máy bơm nước chạy dầu</a></li>
+              <li><a href="#">Máy bơm nước chạy xăng</a></li>
+              <li><a href="#">Máy gieo hạt</a></li>
+              <h4>Máy hàn điện tử</h4>
+              <li><a href="#">Máy hàn que</a></li>
+              <li><a href="#">Máy cắt Plasma</a></li>
+              <li><a href="#">Máy hàn Tig</a></li>
+              <li><a href="#">Máy hàn Mag</a></li>
+              <li><a href="#">Máy hàn Mig</a></li>
+              <li><a href="#">Máy hàn đa năng</a></li>
+              <li><a href="#">Biến thể hàn</a></li>
+              <li><a href="#">Máy hàn công nghiệp</a></li>
+            </ul>
+      </li>
+      <li>
+        <a href="#"><span><i class="fa-solid fa-cash-register"></i></span>Y tế & Sức khỏe</a>
+      </li>
+      <li>
+        <a href="#"><span><i class="fa-solid fa-cash-register"></i></span>Thể thao & Ngoài trời</a>
+      </li>
+      <li>
+        <a href="#"><span><i class="fa-solid fa-cash-register"></i></span>Thiết bị văn phòng</a>
+      </li>
+      <li>
+        <a href="#"><span><i class="fa-solid fa-cash-register"></i></span>Thiết bị số, Phụ kiện</a>
+      </li>
+      <li>
+        <a href="#"><span><i class="fa-solid fa-cash-register"></i></span>Thiết bị công nghiệp</a>
+      </li>
+      <li>
+        <a href="#"><span><i class="fa-solid fa-cash-register"></i></span>Nhà cửa & Đời sống</a>
+      </li>
+    </ul>
+  </nav>
+
+
+</body>
+
+</html>

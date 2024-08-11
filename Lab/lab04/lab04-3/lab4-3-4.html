@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+    <style>
+        /* reset css */
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+
+        }
+
+        .font-bold {
+            font-weight: bold;
+        }
+
+        /* reset css */
+        ul {
+            width: 200px;
+        }
+
+        h3 {
+            padding: 10px;
+            border-bottom: solid 2px rgb(0, 0, 0);
+        }
+
+        nav {
+            margin: 20px 0 0 20px;
+        }
+
+        nav>ul {
+            position: relative;
+            border: solid 2px rgb(0, 0, 0);
+        }
+
+        li {
+            padding: 0.5rem;
+            position: relative;
+        }
+
+        li::after {
+            position: absolute;
+            content: '\f054';
+            font: normal normal normal 14px/1 FontAwesome;
+            right: 10px;
+            color: white;
+        }
+
+        li:not(:last-child) {
+            border-bottom: 1px solid red;
+        }
+
+        i {
+            color: red;
+        }
+
+        li:hover i {
+            color: white;
+        }
+
+        li:hover {
+            background-color: red;
+            cursor: pointer;
+        }
+
+        li:hover a {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <h3>
+                <span><i class="fa-solid fa-bars"></i></span>
+                DANH MỤC
+            </h3>
+            <li>
+                <span>
+                    <i class="fa-solid fa-hard-drive"></i>
+                </span>
+                <a href="#">
+                    Trang chủ
+                </a>
+            </li>
+            <li>
+                <span>
+                    <i class="fa-solid fa-house"></i>
+                </span>
+                <a href="#">
+                    Sản phẩm
+                </a>
+            </li>
+            <li>
+                <span>
+                    <i class="fa-solid fa-briefcase-medical"></i>
+                </span>
+                <a href="#">
+                    Dịch vụ
+                </a>
+            </li>
+            <li>
+                <span>
+                    <i class="fa-solid fa-gun"></i>
+                </span>
+                <a href="#">
+                    Hỗ trợ
+                </a>
+            </li>
+            <li>
+                <span>
+                    <i class="fa-solid fa-phone-volume"></i>
+                </span>
+                <a href="#">
+                    Liên hệ
+                </a>
+            </li>
+        </ul>
+    </nav>
+</body>
+
+</html>

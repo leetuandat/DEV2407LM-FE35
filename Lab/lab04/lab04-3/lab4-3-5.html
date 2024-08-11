@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      font-size: 16px;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+
+    .menu {
+      background-color: #B2B2B2;
+      position: relative;
+    }
+
+    .menu>ul {
+      display: flex;
+      justify-content: space-between;
+      width: 1440px;
+      margin: auto;
+    }
+
+    .menu ul li {
+      padding: 1rem;
+      list-style: none;
+    }
+
+    .menu ul li a {
+      color: #000;
+    }
+
+    .menu-2 {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0px;
+      padding: 40px;
+    }
+
+    .sub-menu {
+      width: 30%;
+      margin-right: 40px;
+      margin-bottom: 40px;
+    }
+
+    .sub-menu ul {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+    }
+
+    .menu li:hover .menu-2 {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .menu>ul>li:hover {
+      background-color: black;
+      cursor: pointer;
+    }
+
+    .menu>ul>li:hover>a {
+      color: white;
+    }
+  </style>
+
+
+  <nav class="menu">
+    <ul>
+      <li class="item">
+        <a href="#">TRANG CHỦ</a>
+      </li>
+      <li class="item">
+        <a href="#">CÁC KHÓA ĐÀO TẠO
+          <span>
+            <i class="fa-solid fa-sort-down"></i>
+          </span>
+        </a>
+        <nav class="menu-2">
+          <div class="sub-menu">
+            <h4>Chuyên đề WEB - PHP</h4>
+            <ul>
+              <li>
+                <a href="#">Lập trình web với <strong>HTML5</strong> -
+                  <strong>CSS3</strong> - <strong>JQuery</strong> - <strong>Bootstrap</strong> - <strong>Ajax</strong> -
+                  [36 giờ]
+                </a>
+              </li>
+              <li>
+                <a href="#">Lập trình web <strong>frontend</strong> - <strong>reactjs</strong> - [75 giờ]</a>
+              </li>
+              <li><a href="#">Lập trình web với mã nguồn mở
+                  <strong>PHP&amp;MYSQL</strong> - <strong>PHP FRAMEWORK</strong> - [126 giờ]</a></li>
+            </ul>
+          </div>
+          <div class="sub-menu">
+            <h4>Chuyên đề WEB - PHP</h4>
+            <ul>
+              <li>
+                <a href="#">Lập trình web với <strong>HTML5</strong> -
+                  <strong>CSS3</strong> - <strong>JQuery</strong>
+                  - <strong>Bootstrap</strong> - <strong>Ajax</strong> -
+                  [36 giờ]
+                </a>
+              </li>
+              <li>
+                <a href="#">Lập trình web <strong>frontend</strong> - <strong>reactjs</strong> - [75 giờ]</a>
+              </li>
+              <li><a href="#">Lập trình web với mã nguồn mở
+                  <strong>PHP&amp;MYSQL</strong> -
+                  <strong>PHP FRAMEWORK</strong> - [126 giờ]</a></li>
+            </ul>
+          </div>
+          <div class="sub-menu">
+            <h4>Chuyên đề WEB - PHP</h4>
+            <ul>
+              <li>
+                <a href="#">Lập trình web với <strong>HTML5</strong> -
+                  <strong>CSS3</strong> - <strong>JQuery</strong> - <strong>Bootstrap</strong> - <strong>Ajax</strong> -
+                  [36 giờ]
+                </a>
+              </li>
+              <li>
+                <a href="#">Lập trình web <strong>frontend</strong> - <strong>reactjs</strong> - [75 giờ]</a>
+              </li>
+              <li><a href="#">Lập trình web với mã nguồn mở
+                  <strong>PHP&amp;MYSQL</strong> - <strong>PHP FRAMEWORK</strong> - [126 giờ]</a></li>
+            </ul>
+          </div>
+          <div class="sub-menu">
+            <h4>Chuyên đề WEB - PHP</h4>
+            <ul>
+              <li>
+                <a href="#">Lập trình web với <strong>HTML5</strong> -
+                  <strong>CSS3</strong> - <strong>JQuery</strong> - <strong>Bootstrap</strong> - <strong>Ajax</strong> -
+                  [36 giờ]
+                </a>
+              </li>
+              <li>
+                <a href="#">Lập trình web <strong>frontend</strong> - <strong>reactjs</strong> - [75 giờ]</a>
+              </li>
+              <li><a href="#">Lập trình web với mã nguồn mở
+                  <strong>PHP&amp;MYSQL</strong> - <strong>PHP FRAMEWORK</strong> - [126 giờ]</a></li>
+            </ul>
+          </div>
+          <div class="sub-menu">
+            <h4>Chuyên đề WEB - PHP</h4>
+            <ul>
+              <li>
+                <a href="#">Lập trình web với <strong>HTML5</strong> -
+                  <strong>CSS3</strong> - <strong>JQuery</strong> - <strong>Bootstrap</strong> - <strong>Ajax</strong> -
+                  [36 giờ]
+                </a>
+              </li>
+              <li>
+                <a href="#">Lập trình web <strong>frontend</strong> - <strong>reactjs</strong> - [75 giờ]</a>
+              </li>
+              <li><a href="#">Lập trình web với mã nguồn mở
+                  <strong>PHP&amp;MYSQL</strong> - <strong>PHP FRAMEWORK</strong> - [126 giờ]</a></li>
+            </ul>
+          </div>
+          <div class="sub-menu">
+            <h4>Chuyên đề WEB - PHP</h4>
+            <ul>
+              <li>
+                <a href="#">Lập trình web với <strong>HTML5</strong> -
+                  <strong>CSS3</strong> - <strong>JQuery</strong> - <strong>Bootstrap</strong> - <strong>Ajax</strong> -
+                  [36 giờ]
+                </a>
+              </li>
+              <li>
+                <a href="#">Lập trình web <strong>frontend</strong> - <strong>reactjs</strong> - [75 giờ]</a>
+              </li>
+              <li><a href="#">Lập trình web với mã nguồn mở
+                  <strong>PHP&amp;MYSQL</strong> - <strong>PHP FRAMEWORK</strong> - [126 giờ]</a></li>
+            </ul>
+          </div>
+        </nav>
+      </li>
+      <li class="item">
+        <a href="#">LẬP TRÌNH CHO TRẺ EM</a>
+      </li>
+      <li class="item">
+        <a href="#">DỊCH VỤ
+          <span>
+            <i class="fa-solid fa-sort-down"></i>
+          </span>
+        </a>
+      </li>
+      <li class="item">
+        <a href="#">LỊCH KHAI GIẢNG</a>
+      </li>
+      <li class="item">
+        <a href="#">TIN TỨC
+          <span>
+            <i class="fa-solid fa-sort-down"></i>
+          </span>
+        </a>
+      </li>
+      <li class="item">
+        <a href="#">TIỆN ÍCH</a>
+      </li>
+      <li class="item">
+        <a href="#">LIÊN HỆ</a>
+      </li>
+    </ul>
+  </nav>
+
+
+</body>
+
+</html>
