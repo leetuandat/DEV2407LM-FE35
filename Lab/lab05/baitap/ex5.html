@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //Ex5: Input random number then show numbers divide 3 == 0.
+
+    function divideby3(n) {
+      let results = [];
+      for (let i = 0; i <= n; i++) {
+        if (i%3 === 0) {
+          results.push(i);
+        }
+      }
+      return results;
+    }
+
+    const n = parseInt(prompt("enter number: "));
+    let results = divideby3(n);
+    document.write(`Numbers divide 3 === are: ${results.join(`, `)}`);
+
+  </script>
+</body>
+
+</html>

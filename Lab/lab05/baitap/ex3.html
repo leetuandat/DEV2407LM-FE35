@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //Ex3: Solve 2st degree equation: ax^2 + bx + c = 0.
+
+    var x1 = 0;
+    var x2 = 0;
+    function solve2(a, b, c) {
+      let delta = Math.pow((b / 2), 2) - a * c;
+      if (delta === 0) {
+        x1 = -b / (2 * a);
+        x2 = -b / (2 * a);
+      }
+      if (delta < 0) {
+        console.log("phuong trinh vo nghiem");
+        return [];
+      }
+      if (delta > 0) {
+        x1 = (-(b / 2) + Math.sqrt(delta)) / a;
+        x2 = (-(b / 2) - Math.sqrt(delta)) / a;
+      }
+      return [x1, x2];
+    }
+
+    const a = prompt("Please enter a: ")
+    const b = prompt("Please enter b: ")
+    const c = prompt("Please enter c: ")
+
+    const results = solve2(a, b, c);
+    if (results.length > 0) {
+      document.writeln(`Nghiệm của phương trình là x1 = ${results[0]} và x2 = ${results[1]}`);
+    } else {
+      document.writeln("Phương trình không có nghiệm thực.");
+    }
+  </script>
+</body>
+
+</html>

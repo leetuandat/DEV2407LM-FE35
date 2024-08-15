@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // Ex1: Read data from prompt and show name, birthday, age, hometown
+    function calculateAge(birthday) {
+      const birthDate = new Date(birthday);
+      const diffirent = Date.now() - birthDate.getTime();
+      const ageDate = new Date(diffirent);
+      return Math.abs(ageDate.getUTCFullYear() - 1970);
+    }
+
+    const userName = prompt("Please enter your name: ");
+    const birthday = prompt("Please enter your birthday: ");
+    const age = calculateAge(birthday);
+    const hometown = prompt("Please enter your hometown: ");
+
+    document.write(`Name: ${userName}<br>`);
+    document.write(`Birthday: ${birthday}<br>`);
+    document.write(`Age: ${age}<br>`);
+    document.write(`Hometown: ${hometown}<br>`);
+  </script>
+</body>
+
+</html>

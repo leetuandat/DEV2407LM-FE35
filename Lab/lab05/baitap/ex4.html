@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //Ex4: Input random number then show prime number lower than that.
+
+    function findPrime(n) {
+      if (n < 2) {
+        console.log("Không có số thỏa mãn")
+        return [];
+      }
+      if (n === 2) {
+        return "2";
+      }
+
+      for (let i = 2; i <= n; i++) {
+        let isPrime = true;
+        for (let j = 2; j <= Math.sqrt(i); j++) {
+          if (i % j === 0) {
+            isPrime = false;
+            break;
+          }
+        }
+        if (isPrime) {
+          primes.push(i);
+        }
+      }
+      return primes;
+    }
+
+
+    const n = parseInt(prompt("enter number: "));
+    let results = findPrime(n);
+    document.write(`The prime numbers that satisfy the condition are: ${results.join(", ")}`);
+  </script>
+</body>
+
+</html>
