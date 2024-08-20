@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <script>
+
+
+    var odd = even = "";
+    var totalOdd = totalEven = 0;
+    var array = [4, 6, 9, 11, 34, 22, 57, 68, 90, 21, 35, 77];
+    document.write(`number elements of array: ${array.length} <br/>`);
+    for (i = 0; i < array.length; i++) {
+      if (array[i] % 2 == 0) {
+        totalEven += array[i];
+        if (even.length == 0) {
+          even = array[i];
+        } else {
+          even += "," + array[i];
+        }
+      } else {
+        totalOdd += array[i];
+        if (odd.length == 0) {
+          odd = array[i];
+        } else {
+          odd += "," + array[i];
+        }
+      }
+    }
+
+    document.write(`even numbers in array are: ${even} <br/>`);
+    document.write(`sum of even array is: ${totalEven} <br/>`);
+    document.write(`odd numbers in array are: ${odd} <br/>`);
+    document.write(`sum of odd array is: ${totalOdd} <br/>`);
+
+
+  </script>
+
+
+</body>
+
+</html>

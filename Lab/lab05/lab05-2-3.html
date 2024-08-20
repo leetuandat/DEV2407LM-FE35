@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <script>
+
+
+    var number = prompt(`Nhập vào số có 2 chữ số: `);
+    document.write(`Bạn vừa nhập vào số: ${number} <br/>`);
+    document.writeln(`Các số lẻ từ 1 đến ${number} <br/>`);
+    var odd = even = 0;
+
+    for (let i = 1; i <= number; i++) {
+      if(i%2 != 0) {
+        document.write(`${i} <br/>`)
+        odd += i;
+      }
+    }
+
+    document.writeln(`Các số chẵn từ 1 đến ${number} <br/>`);
+    for (let i = 1; i <= number; i++) {
+      if(i%2 == 0) {
+        document.write(`${i} <br/>`)
+        even += i;
+      }
+    }
+
+    document.write(`Tổng các số lẻ: ${odd} <br/>`);
+    document.write(`Tổng các số chẵn: ${even} <br/>`);
+
+  </script>
+
+
+</body>
+</html>

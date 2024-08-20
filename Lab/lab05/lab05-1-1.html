@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <style>
+    form {
+      width: 300px;
+      margin: 50px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      box-shadow: 0 0 10px #ccc;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      width: 25%;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="submit"],
+    input[type="reset"] {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+
+    input[type="checkbox"] {
+      margin-top: 2px;
+    }
+  </style>
+
+
+  <form action="post" name="frm">
+    <h1>Login Information</h1>
+    <hr>
+    <div>
+      <label for="userName">User Name</label>
+      <input type="text" name="userName" id="userName">
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password">
+    </div>
+    <div>
+      <label for="remember">Remember</label>
+      <input type="checkbox" name="remember" id="remember">
+    </div>
+    <div>
+      <input type="submit" name="submit" id="submit" value="Đăng nhập" onclick="login()">
+    </div>
+  </form>
+
+  <script>
+    function login() {
+      event.preventDefault()
+      //Kiểm tra xem nhận được dữ liệu hay chưa
+      console.log(frm.userName.value);
+      console.log(frm.password.value);
+
+      if (frm.userName.value === "DatLe" && frm.password.value === "12345") {
+        alert("Đăng nhập thành công");
+      } else {
+        alert("Sai rồi");
+      }
+    }
+  </script>
+
+</body>
+
+</html>

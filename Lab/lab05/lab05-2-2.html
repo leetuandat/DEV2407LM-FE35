@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <script>
+    function ptb1(b, c) {
+      if (b === 0) {
+        if (c === 0) {
+          document.write(`Phương trình có vô số nghiệm`);
+        } else {
+          document.write(`Phương trình vô nghiệm`);
+        }
+      } else {
+        nghiem = -b / c;
+        document.write(`Phương trình có nghiệm là: ${nghiem}`);
+      }
+    }
+
+    function ptb2(a, b, c) {
+      let delta = Math.pow((b / 2), 2) - a * c;
+      if (delta < 0) {
+        document.write(`Phương trình vô nghiệm`)
+      }
+      if (delta === 0) {
+        x = (-(b / 2) + Math.sqrt(delta)) / a;
+        document.write(`Phương trình có nghiệm kép là: x = ${x}`);
+      }
+
+      if (delta > 0) {
+        x1 = (-(b / 2) + Math.sqrt(delta)) / a;
+        x2 = (-(b / 2) - Math.sqrt(delta)) / a;
+        document.write(`Phương trình có 2 nghiệm là: x1 = ${x1}, x2 = ${x2}`);
+      }
+    }
+
+
+    var a = prompt(`Bạn hãy nhập vào số a: `);
+    var b = prompt(`Bạn hãy nhập vào số b: `);
+    var c = prompt(`Bạn hãy nhập vào số c: `);
+    if (a === 0) {
+      ptb1(b, c);
+    } else {
+      ptb2(a, b, c);
+    }
+
+    
+  </script>
+
+
+</body>
+</html>
