@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>List Cart</title>
+</head>
+
+<body>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Product's name</th>
+        <th>Price</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody id="list-cart">
+      <button class="qty qty-plus">+</button>
+      <button class="qty qty-subtract">-</button>
+    </tbody>
+  </table>
+
+
+
+  <script>
+
+
+    var listCart = [
+      {
+        id: `sp1`,
+        name: 'iphone 5',
+        price: `100.000`,
+        img: `./images/phone_hand_PNG15.png`,
+        quantity: 1,
+        status: true,
+      },
+      {
+        id: `sp2`,
+        name: 'iphone 5',
+        price: `100.000`,
+        img: `./images/phone_hand_PNG15.png`,
+        quantity: 2,
+        status: true,
+      },
+      {
+        id: `sp3`,
+        name: 'iphone 5',
+        price: `100.000`,
+        img: `./images/phone_hand_PNG15.png`,
+        quantity: 5,
+        status: true,
+      },
+    ]
+
+    function renderCart(cart) {
+      var renderCart = `
+      <tr>
+        <td><img style="width: 10rem;" src="`+ cart.img + `" alt="iphone"></td>
+        <td>`+ cart.name + `</td>
+        <td>`+ cart.price + `</td>
+        <td data-id = "`+ cart.id + `"><button class="qty qty-subtract" onclick="subtract('` + cart.id + `')">-</button>` + cart.quantity + `  <button class="qty qty-plus" onclick="plus('` + cart.id + `')">+</button></td>
+        <td><button onclick="deleteItem('` + cart.id + `')">Delete</button></td>
+      </tr>
+      `;
+      return renderCart;
+    }
+
+    function renderListCard(carts) {
+      var cart = '';
+      for (let i = 0; i < carts.length; i++) {
+        cart += renderCart(carts[i]);
+      }
+      document.getElementById("list-cart").innerHTML = cart;
+    }
+
+    //get data
+    renderListCard(listCart);
+
+
+    function subtract(id) {
+      for (let i = 0; i < listCart.length; i++) {
+        if (id == listCart[i].id) {
+          if (listCart[i].quantity > 1) {
+            listCart[i].quantity--;
+          }
+        }
+      }
+      renderListCard(listCart);
+    }
+
+    function plus(id) {
+      for (let i = 0; i < listCart.length; i++) {
+        if (id == listCart[i].id) {
+          listCart[i].quantity++;
+        }
+      }
+      renderListCard(listCart);
+    }
+
+    
+    function deleteItem(id) {
+      listCart = listCart.filter(function(item) {
+        return item.id !== id;
+      });
+      renderListCard(listCart);
+    }
+  </script>
+
+
+
+</body>
+
+</html>

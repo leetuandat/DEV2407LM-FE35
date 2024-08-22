@@ -1,0 +1,21 @@
+/* Bộ chọn tát cả các thành phần HTML */
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+/* Bộ chọn tag 
+   Chọn các thành phần cùng loại
+*/
+p {
+  color: rgb(250, 0, 175);
+}
+
+/* Bộ chọn tag01 tag 02 
+   Chọn tất cả phần có thể tag02 nằm trong tag01
+*/
+#zone1 p {
+  background-color: aqua;
+}
+

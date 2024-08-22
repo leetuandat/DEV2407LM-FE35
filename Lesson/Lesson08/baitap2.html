@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Đăng ký</title>
+</head>
+
+<body>
+
+  <style>
+    form[name="frm"] {
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #f4f4f4;
+      border-radius: 8px;
+    }
+
+
+    form[name="frm"] div {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"] {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+  </style>
+
+  <form action="post" name="frm">
+
+    <div>
+      <label for="name">Họ và tên</label>
+      <input type="text" name="name" id="name">
+      <p class="notiName">Bạn chưa điền tên</p>
+    </div>
+    <div>
+      <label for="birthday">Ngày sinh</label>
+      <input type="date" name="birthday" id="birthday">
+    </div>
+    <div>
+      <label for="rollNo">Mã sinh viên</label>
+      <input type="text" name="rollNo" id="rollNo">
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email">
+    </div>
+    <div>
+      <label for="phone">Số điện thoại</label>
+      <input type="number" name="phone" id="phone">
+    </div>
+    <div>
+      <input type="submit" name="reg" id="submit" value="Đăng ký" onclick="regist()">
+    </div>
+  </form>
+
+  <script>
+    // kiểm tra dữ liệu nhập vào nếu sai thì in ra màn hình thông bóa lỗi tại vị trí lỗi
+    // Làm form đăng ký cho sinh viên
+    function regist() {
+      event.preventDefault()
+      //Kiểm tra xem nhận được dữ liệu hay chưa
+      console.log(frm.name.value);
+      console.log(frm.birthday.value);
+      console.log(frm.rollNo.value);
+      console.log(frm.email.value);
+      console.log(frm.phone.value);
+
+      if(frm.name.value == "") {
+        alert("bạn chưa điền tên!"); 
+      } 
+      if(frm.birthday.value == "") {
+        alert("bạn chưa điền ngày sinh!"); 
+      } 
+      if(frm.rollNo.value == "") {
+        alert("bạn chưa điền mã sinh viên!"); 
+      } 
+      if(frm.email.value == "") {
+        alert("bạn chưa điền email!"); 
+      } 
+      if(frm.phone.value == "") {
+        alert("bạn chưa điền số điện thoại!"); 
+      } 
+
+      if (frm.name.value != "" && frm.birthday.value != "" && frm.rollNo.value != "" && frm.email.value != "" && frm.phone.value != "") {
+        alert("Đăng ký thành công!")
+      }
+    }
+
+  </script>
+
+
+</body>
+
+</html>

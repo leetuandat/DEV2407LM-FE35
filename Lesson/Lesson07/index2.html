@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biến JS</title>
+</head>
+<body>
+  <script>
+    //khai bao bien
+    //const: hang so
+    const PI = 3.14;
+    console.log("Gia tri cua PI: ", PI);
+    //khong khai bao duoc lai voi const
+    //PI = 3,14
+    //Khai bao bien voi var
+    var x = 3;
+    console.log("x: ", x);
+    x = "Le Dat"
+    console.log("x: ", x);
+    //Khai bao bien voi let
+    let y = 4;
+    console.log("y: ",y);
+    y = x;
+    console.log("y: ",y);
+    document.write("<h2>y: ", y, "</h2>");
+    var check = confirm("ban co tren 18 tuoi khong");
+    document.writeln("Gia tri check: ", check);
+    var name = prompt("Nhap ten cua ban: ");
+    document.writeln("Ten cua ban: ", name);
+
+    var number = 4;
+    if (++number > 4) {
+      document.writeln("")
+    }
+
+    //Su dung phep so sanh
+    document.writeln("so sanh 4 > `3` ", 4 > `3`);
+
+    //Toan tu logic 
+    var check1 = false;
+    document.writeln("Check1: ", check1);
+    document.writeln("!check1: ", !check1);
+    //&& lenh end
+    if(check1 && 3 == `3`) {
+      document.writeln("check1: ", check1);
+    }
+
+    var number2 = 6;
+    if(number2 > 3 && number2 < 8) {
+      document.writeln("number2 > 3 && number2 < 8: ", number2);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regular</title>
+</head>
+<body>
+  
+
+  <script>
+
+
+    var regx = /devmaster/
+    if (regx.test("Welcome to devmaster")) {
+      document.write("in string 'Welcome to devmaster' containing string 'devmaster' ");
+    } else {
+      document.write("in string 'Welcome to devmaster' doesn't contain string 'devmaster' ");
+    };
+
+    regx = /n+/
+    if (regx.test("hello")) {
+      document.write("<br/> in string 'hello' containing n consecutive characters ");
+    } else {
+      document.write("<br/> in string 'hello' doesn't n consecutive characters ");
+    }
+
+  </script>
+
+
+</body>
+</html>

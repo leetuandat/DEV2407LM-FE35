@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    // var a=4, b=5;
+    // var result = ++a +b;
+    // document.writeln("result", result, a);
+
+    // a=4;
+    // var result = a++ +b;
+
+    //Vong lap for
+
+    document.write("<br/> Vòng lặp for (for không thân)")
+    for (let k = 0; document.write(k,";"), k<=9; k++);
+
+    //while and do while
+    var check3 = true;
+    while(check3) {
+      document.write("<br/> Thực hiện khối lệnh while");
+      check3 = false;
+    }
+
+    do {
+      document.write("<br/> Thực hiện khối lệnh do while");
+    } while(check3);
+
+
+    //mảng
+    // Syntax khai báo
+    // Khai báo theo từ khóa new
+    // var tên_mảng = new Array(); khai báo mảng rỗng
+    // var tên_mảng = new Array(1, 2, 3); khai báo mảng dữ liệu có sẵn
+    // Khai báo với cặp ngoặc []
+    // var tên_mảng = []; khai báo mảng rỗng
+    // var tên_mảng = [1, 2, 3]; khai báo mảng dữ liệu có sẵn
+
+    var arr = [1, 3, 6, 8, "le dat", "devmaster", 60, "65"];
+
+    // Lấy dữ liệu
+    // tên_mảng[vị trí] bắt đầu từ 0 đến length-1
+
+    for (let i = 0; i < arr.length; i++) {
+      document.write("<br/> arr[",i,"]: ", arr[i]);
+    }
+
+    //cách 2
+    i=0;
+    while(i < arr.length && arr.length != 0) {
+      document.write("<br/> arr[",i-1,"]: ", arr[i]);
+      ++i;
+    }
+
+    document.write("<br/>arr.valueOf() ", arr.valueOf());
+
+    arr.push("hello");
+    document.write("<br/>arr.push() - thêm cuối", arr.valueOf());
+
+    arr.unshift("hello");
+    document.write("<br/>arr.unshift() - thêm đầu ", arr.valueOf());
+
+    arr.pop();
+    document.write("<br/>arr.pop() - xóa cuối ", arr.valueOf());
+
+    arr.shift();
+    document.write("<br/>arr.shift() - xóa đầu ", arr.valueOf());
+
+    var arr2 = ["vui", "vẻ"];
+    //nối chuỗi
+    var arrResult = arr.concat(arr2);
+    document.write("<br/>Nối chuỗi arrResult: ", arrResult.valueOf());
+
+    //lấy giá trị của mảng từ giá trị 3 đến giá trị 5
+    document.write("<br/>Lấy giá trị của mảng từ giá trị 3 dến giá trị 5: ", arr.slice(3, 5));
+
+
+    //Mảng 2 chiều
+    var arr3 = [1, 2, 3] [2, 6, 5];
+    for (let i=0; i < arr.length; i++) {
+      for (let i=0; i<arr.length; i++) {
+        
+      }
+    }
+
+
+  </script>
+</body>
+</html>

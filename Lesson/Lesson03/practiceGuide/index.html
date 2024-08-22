@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <form action="" method="post" enctype="multipart/form-data">
+    <table>
+      <tr>
+        <td>Input Text: (User Name)</td>
+        <td>
+          <input type="text" name="userName" id="userName">
+        </td>
+      </tr>
+      <tr>
+        <td>Input Pass</td>
+        <td>
+          <input type="password" name="password" id="password">
+        </td>
+      </tr>
+      <tr>
+        <td>Number</td>
+        <td>
+          <input type="number" name="diem" id="diem">
+        </td>
+      </tr>
+      <tr>
+        <td>Tel: </td>
+        <td>
+          <input type="tel" name="phone" id="phone">
+        </td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td>
+          <input type="email">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Radio (Giới tính)
+        </td>
+        <td>
+          <!-- dùng trùng name thi radio mới được chọn 1 trong nhiều -->
+          <label for="male">Nam</label>
+          <input type="radio" name="gioitinh" id="male">
+          <label for="female">Nữ</label>
+          <input type="radio" name="gioitinh" id="female">
+        </td>
+      </tr>
+      <tr>
+        <td>Check box (sở thích)</td>
+        <td>
+          <label for="game">Chơi game</label>
+          <input type="checkbox" name="soThich" id="game">
+          <label for="book">Đọc truyện</label>
+          <input type="checkbox" name="soThich" id="book">
+          <label for="calis">Calis</label>
+          <input type="checkbox" name="soThich" id="calis">
+          <br>
+          <label for="music">Nghe nhạc</label>
+          <input type="checkbox" name="soThich" id="music">
+        </td>
+      </tr>
+      <tr>
+        <td>Thời gian (Ngày sinh)</td>
+        <td>
+          <input type="time" name="birth" id="birth">
+          <input type="date" name="birth" id="birth">
+          <input type="datetime" name="birth" id="birth">
+          <input type="datetime-local" name="birth" id="birth">
+          <input type="month" name="birth" id="birth">
+          <input type="week" name="birth" id="birth">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Input ẩn
+        </td>
+        <td>
+          <input type="hidden" name="id" id="id">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          File
+        </td>
+        <td>
+          <input type="file" name="file" id="file">
+        </td>
+      </tr>
+      <tr>
+        <td>Range</td>
+        <td>
+          <input type="range" name="range" id="range" min="0" max="100">
+        </td>
+      </tr>
+      <tr>
+        <td>Thành Phố</td>
+        <td>
+          <select name="thanhPho" id="thanhPho">
+            <option value="HN">Hà Nội</option>
+            <option value="HP">Hải Phòng</option>
+            <option value="VP">Vĩnh Phúc</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Color</td>
+        <td>
+          <input type="color">
+        </td>
+      </tr>
+      <tr>
+        <td>Submit/Button</td>
+        <td>
+          <input type="submit" name="submit" id="submit">
+          <input type="button" name="button" id="button" value="Gửi">
+          <input type="reset" name="reset" id="reset">
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+
+</html>

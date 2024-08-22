@@ -1,0 +1,10 @@
+#clock {
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  margin-top: 50px;
+}
+
+#hour, #minute, #second {
+  margin: 10px;
+  font-size: 24px;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <form action="post" name="frm">
+    <div>
+      <label for="userName">User Name</label>
+      <input type="text" name="userName" id="userName">
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password">
+    </div>
+    <div>
+      <label for="remember">Remember</label>
+      <input type="checkbox" name="remember" id="remember">
+    </div>
+    <div>
+      <input type="submit" name="submit" id="submit" value="Đăng nhập" onclick="login()">
+    </div>
+  </form>
+
+  <script>
+    function login() {
+      event.preventDefault()
+      //Kiểm tra xem nhận được dữ liệu hay chưa
+      console.log(frm.userName.value);
+      console.log(frm.password.value);
+
+      if(frm.userName.value === "DatLe" && frm.password.value === "12345") {
+        alert("Đăng nhập thành công"); 
+      } else {
+        alert("Sai rồi");
+      }
+    }
+  </script>
+
+</body>
+</html>

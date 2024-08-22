@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dom</title>
+</head>
+
+<body>
+
+
+  <style>
+    .box {
+      height: 30px;
+      border: 1px solid #000;
+      margin: 2px;
+    }
+  </style>
+
+
+  <h2 id="DOM_id">DOM Element</h2>
+
+  <div class="box">Box 1</div>
+  <div class="box">Box 2</div>
+  <div class="box">Box 3</div>
+
+  <script>
+
+
+    //DOM Element
+    //interact with tag HTML through ID attribute
+    var element = document.getElementById(`DOM_id`);
+    console.log(element);
+    element.style.color = "red";
+
+    //interact with tag HTML through Class Name
+    var elementClass = document.getElementsByClassName(`box`);
+    for (var i = 0; i < elementClass.length; i++) {
+      elementClass[i].style.color = 'blue';
+    }
+
+    //interact with tag HTML by tag name
+    var elementTag = document.getElementsByTagName(`div`);
+    console.log(elementTag);
+
+    //interact with tag HTML through css selector
+    var elementCSSSelector = document.querySelectorAll(`div.box p`);
+    console.log(elementCSSSelector);
+    elementCSSSelector = document.querySelectorAll(`DOM_id`);
+    console.log(elementCSSSelector);
+
+  </script>
+
+
+
+</body>
+
+</html>

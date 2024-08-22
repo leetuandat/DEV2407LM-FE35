@@ -1,0 +1,36 @@
+@media(max-width:767px) {
+  .tweak-1.svelte-11np3qp {
+    font-size: 66.66%;
+    width: 100%;
+    line-height: 1.5em
+  }
+}
+
+@media(min-width:1024px) {
+  .title.svelte-11np3qp {
+    margin-left: -0.25rem;
+    margin-top: -0.5rem
+  }
+
+  .pl-1.svelte-11np3qp {
+    padding-left: 1.25ch
+  }
+}
+
+.subtle-hover.svelte-11np3qp:hover {
+  background: transparent;
+  box-shadow: none;
+  cursor: pointer;
+  opacity: 0.8;
+  color: currentColor
+}
+
+.pr-1.svelte-1enhvii {
+  padding-right: 4ch
+}
+
+@media(min-width:1024px) {
+  .pr-1.svelte-1enhvii {
+    padding-right: 1ch
+  }
+}

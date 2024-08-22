@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <style>
+    #errName,
+    #errPass,
+    #errName2 {
+      display: none;
+      color: red;
+    }
+
+    div {
+      margin: 10px;
+    }
+  </style>
+
+
+  <form action="" name="frm">
+
+    <div>
+      <label for="userName">User Name</label>
+      <input type="text" id="userName" name="userName" onfocusout="checkUserName()">
+      <p id="errName">User name can't be left blank</p>
+      <p id="errName2">User name must contain @ character</p>
+    </div>
+
+    <div>
+      <label for="password">Password</label>
+      <input type="text" name="password" id="password">
+      <p id="errPass">Password can't be left blank</p>
+    </div>
+
+    <div>
+      <input type="checkbox" name="remember" id="remember">
+      <label for="remember">Remember</label>
+    </div>
+
+    <div>
+      <input type="submit" name="submit" id="submit" value="Log in">
+    </div>
+
+  </form>
+
+
+  <script>
+
+
+    function checkUserName() {
+      var userName = document.getElementById(`userName`).value;
+      if (userName === "") {
+        var errName = document.getElementById(`errName`);
+        errName.style.display = "block";
+      } else {
+        var errName = document.getElementById(`errName`);
+        errName.style.display = "none";
+      }
+    }
+
+
+    document.getElementById(`password`).addEventListener(`blur`, function () {
+      var password = document.getElementById(`password`).value;
+      if (password === "") {
+        var errPass = document.getElementById(`errPass`);
+        errPass.style.display = `block`;
+      } else {
+        var errPass = document.getElementById(`errPass`);
+        errPass.style.display = `none`;
+      }
+    })
+
+
+    document.getElementById(`userName`).addEventListener(`change`, function() {
+      var userName = document.getElementById(`userName`).value;
+      console.log(userName);
+      var regx = /@/
+      if (userName != "" && !regx.test(userName)) {
+        var errName2 = document.getElementById(`errName2`);
+        errName2.style.display = "block";
+      } else {
+        var errName2 = document.getElementById(`errName2`);
+        errName2.style.display = `none`;
+      }
+    });
+
+
+
+  </script>
+
+
+</body>
+
+</html>

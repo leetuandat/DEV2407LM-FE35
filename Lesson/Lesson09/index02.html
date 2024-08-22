@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Object in JS</title>
+</head>
+<body>
+  
+
+  <script>
+
+
+    //object
+    //declare object
+    //Syntax
+    //method 1: var name_Object = new Object();
+    //method 2: var name_Object = {}
+    var object1 = new Object();
+    var object2 = {};
+
+    //assign object attribute/declare attribute
+    object1.name = 'Devmaster';
+    object1.age = '1';
+    console.log(object1);
+
+    var object3 = {
+      name: "object",
+      age: "0",
+    };
+    console.log("object3: ", object3);
+
+
+    //object method
+    //declare object method
+    var object4 = {
+      info: function() {
+        //command to excute
+        document.writeln("Object method object4 <br/>");
+      }
+    };
+
+    //call method info of object4
+    object4.info();
+    //declare object method of object3
+    object3.info = function() {
+      //command to excute
+      document.writeln("Object method object3");
+    };
+    object3.info();
+
+
+    //Note:
+    //declare {} 
+
+
+
+  </script>
+
+
+</body>
+</html>
