@@ -8,5 +8,68 @@
 </head>
 <body>
   
+
+  <style>
+
+    body {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      background-color: beige;
+    }
+
+    form {
+      width: 500px;
+      background-color: aqua;
+      padding: 20px;
+      border-radius: 20px;
+    }
+
+  </style>
+
+
+  <form action="">
+    <table width="400">
+      <caption>
+        <h2>Login</h2>
+      </caption>
+      <tr>
+        <td>User Name</td>
+        <td>
+          <input type="text" name="userName" id="userName" placeholder="Enter user name">
+        </td>
+      </tr>
+      <tr>
+        <td>Password</td>
+        <td>
+          <input type="password" name="password" id="password" placeholder="Enter password">
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <input type="button" value="Login" id="login" name="login" onclick="checkLogin()">
+        </td>
+      </tr>
+    </table>
+  </form>
+
+  <script>
+
+    function checkLogin() {
+      var userName = document.getElementById(`userName`);
+      var password = document.getElementById(`password`);
+
+      if (userName.value == "") {
+        alert("u need enter user name!");
+        userName.focus();
+      } else if (password.value == "") {
+        alert(`u need enter password!`);
+        password.focus();
+      }
+    }
+
+  </script>
+
 </body>
 </html>
