@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+    <table width="120" border="1">
+      <tr>
+        <td colspan="4">
+          <input type="text" name="number" id="number" class="number">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="button" value="1" name="num1" id="num1" onclick="getValue(this.value)">
+        </td>
+        <td>
+          <input type="button" value="2" name="num2" id="num2" onclick="getValue(this.value)">
+        </td>
+        <td>
+          <input type="button" value="3" name="num3" id="num3" onclick="getValue(this.value)">
+        </td>
+        <td>
+          <input type="button" value="+" name="plus" id="plus" onclick="pheptoan(this.value)">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="button" value="4" name="num4" id="num4" onclick="getValue(this.value)">
+        </td>
+        <td>
+          <input type="button" value="5" name="num5" id="num5" onclick="getValue(this.value)">
+        </td>
+        <td>
+          <input type="button" value="6" name="num6" id="num6" onclick="getValue(this.value)">
+        </td>
+        <td>
+          <input type="button" value="-" name="subtract" id="subtract" onclick="pheptoan(this.value)">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="button" value="7" name="num7" id="num7" onclick="getValue(this.value)">
+        </td>
+        <td>
+          <input type="button" value="8" name="num8" id="num8" onclick="getValue(this.value)">
+        </td>
+        <td>
+          <input type="button" value="9" name="num9" id="num9" onclick="getValue(this.value)">
+        </td>
+        <td>
+          <input type="button" value="*" name="multi" id="multi" onclick="pheptoan(this.value)">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="button" value="AC" name="ac" id="ac" onclick="reset()">
+        </td>
+        <td colspan="2">
+          <input type="button" value="=" id="equal" name="equal" onclick="result()">
+        </td>
+        <td>
+          <input type="button" value="/" id="divide" name="divide" onclick="pheptoan(this.value)">
+        </td>
+      </tr>
+    </table>
+
+
+    <script>
+
+      var number = ``;
+      var operation = ``;
+
+      const getValue = (val) => {
+        num = document.getElementById(`number`).value;
+        document.getElementById(`number`).value = num + `` + val;
+      }
+
+      const pheptoan = (val) => {
+        number = document.getElementById(`number`).value;
+        document.getElementById(`number`).value = ``;
+        operation = val;
+      }
+
+      const result = () => {
+        lastResult = 0;
+        switch(operation) {
+          case `+`:
+            lastResult = parseInt(number) + parseInt(document.getElementById(`number`).value);
+            break;
+          case `-`:
+            lastResult = parseInt(number) - parseInt(document.getElementById(`number`).value);
+            break;
+          case `*`:
+            lastResult = parseInt(number) * parseInt(document.getElementById(`number`).value);
+            break;
+          case `/`:
+            lastResult = parseInt(number) / parseInt(document.getElementById(`number`).value);
+            break;
+        }
+        document.getElementById(`number`).value = lastResult;
+      }
+
+      const reset = () => {
+        number = ``;
+        operation = ``;
+        document.getElementById(`number`).value = ``;
+      }
+    </script>
+
+
+</body>
+</html>

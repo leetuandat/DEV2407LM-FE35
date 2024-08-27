@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+<table>
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Product's name</th>
+        <th>Price</th>
+        <td></td>
+      </tr>
+    </thead>
+    <tbody id="list-cart">
+    </tbody>
+    <button class="qty qty-plus">+</button>
+    <button class="qty qty-subtract">-</button>
+    <button class="previous">Previous</button>
+    <button class="next">Next</button>
+</table>
+<button onclick="addNewItem()">Add New Product</button>
+
+  <script>
+    var data = [
+      {
+        id: `1`,
+        name: `tra va chen`,
+        price: `100.000d`,
+        img: `../images/TINTUC_02-05.jpg`,
+        quantily: 2,
+        status: true,
+      },
+      {
+        id: `2`,
+        name: `la tra`,
+        price: `50.000d`,
+        img: `../images/TINTUC_03.jpg`,
+        quantily: 3,
+        status: true,
+      },
+      {
+        id: `3`,
+        name: `tra va 2 chen`,
+        price: `150.000d`,
+        img: `../images/TINTUC_01.jpg`,
+        quantily: 4,
+        status: true,
+      }
+    ];
+
+    const renderCart = (cart) => {
+      return `
+      <tr>
+        <td><img style = "width: 10rem;" src="${cart.img}" alt="product"></td>
+        <td>${cart.name}</td>
+        <td>${cart.price}</td>
+        <td data-id="${cart.id}"> <button class="qty qty-subtract" onclick = "subtract(${cart.id})">-</button>  ${cart.quantily} <button class="qty qty-subtract" onclick = "plus(${cart.id})"> + </button> </td>
+        <td><button onclick="deleteItem('${cart.id}')">Delete</button></td>
+      </tr>
+      `;
+    }
+
+
+    const renderListCart = (carts) => {
+      var cart = ``;
+      for (let i = 0; i < carts.length; i++) {
+        cart += renderCart(carts[i]);
+      }
+      document.getElementById(`list-cart`).innerHTML = cart;
+    }
+
+    renderListCart(data);
+
+    const deleteItem = (id) => {
+      data = data.filter(item => item.id !== id);
+      renderListCart(data);
+    }
+
+    const addItem = (newItem) => {
+      const existingItem = data.find(item => item.id === newItem.id);
+      if (existingItem) {
+        existingItem.quantily += newItem.quantily;
+      } else {
+        data.push(newItem);
+      }
+      renderListCart(data);
+    }
+
+    const addNewItem = () => {
+      const newItem = {
+        id: `${data.length + 1}`,
+        name: `new product ${data.length + 1}`,
+        price: `120000`,
+        img: `../images/TINTUC_01.jpg`,
+        quantily: 1,
+        status: true,
+      };
+      addItem(newItem);
+    }
+
+    const plus = (id) => {
+      for (let i = 0; i < data.length; i++) {
+        if (id == data[i].id) {
+          data[i].quantily++;
+        }
+      }
+      renderListCart(data);
+    }
+
+    const subtract = (id) => {
+      for (let i = 0; i < data.length; i++) {
+        if (id == data[i].id) {
+          if (data[i].quantily > 0) {
+            data[i].quantily--;
+          }
+        }
+      }
+      renderListCart(data);
+    }
+
+    let currentPage = 1;
+    const itemPerPage = 3;
+
+    const renderListCartWithPagiantion = () => {
+      const pagenatedItems = paginate(data, currentPage, itemPerPage);
+      renderListCart(pagenatedItems);
+
+    }
+
+    const updatePaginationControls = () => {
+      document.querySelector(`.previous`).disabled = currentPage === 1;
+      document.querySelector(`.next`).disabled = currentPage === Math.ceil(data.length / itemPerPage);
+    };
+
+    document.querySelector(`.previous`).addEventListener(`click`, () => {
+      if (currentPage > 1) {
+        currentPage--;
+        renderListCartWithPagiantion();
+      }
+    });
+
+    document.querySelector(`.next`).addEventListener(`click`, () => {
+      if (currentPage < Math.ceil(data.length / itemPerPage)) {
+        currentPage++;
+        renderListCartWithPagiantion();
+      }
+    })
+
+
+    const paginate = (item, currentPage, itemPerPage) => {
+      const start = (currentPage - 1) * itemPerPage;
+      const end = start + itemPerPage;
+      return item.slice(start, end);
+    }
+
+  </script>
+</body>
+
+</html>
