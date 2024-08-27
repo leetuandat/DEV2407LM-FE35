@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add New Product</title>
+  <style>
+    .error {
+      color: red;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>Add New Product</h2>
+  <form id="productForm">
+    <div>
+      <label for="productName">Product Name:</label>
+      <input type="text" id="productName">
+      <span id="errorProductName" class="error"></span>
+    </div>
+
+    <div>
+      <label for="productPrice">Product Price:</label>
+      <input type="text" id="productPrice">
+      <span id="errorProductPrice" class="error"></span>
+    </div>
+
+    <div>
+      <label for="productDescription">Product Description:</label>
+      <textarea id="productDescription"></textarea>
+      <span id="errorProductDescription" class="error"></span>
+    </div>
+
+    <div>
+      <label for="productQuantity">Product Quantity:</label>
+      <input type="number" id="productQuantity">
+      <span id="errorProductQuantity" class="error"></span>
+    </div>
+
+    <div>
+      <label for="productCategory">Product Category:</label>
+      <select id="productCategory">
+        <option value="">Select Category</option>
+        <option value="electronics">Electronics</option>
+        <option value="apparel">Apparel</option>
+        <option value="home">Home</option>
+      </select>
+      <span id="errorProductCategory" class="error"></span>
+    </div>
+
+    <button type="submit">Add Product</button>
+  </form>
+
+  <script>
+    document.getElementById('productForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+
+      clearErrors();
+
+      const productName = document.getElementById('productName').value.trim();
+      const productPrice = document.getElementById('productPrice').value.trim();
+      const productDescription = document.getElementById('productDescription').value.trim();
+      const productQuantity = document.getElementById('productQuantity').value.trim();
+      const productCategory = document.getElementById('productCategory').value;
+
+      let isValid = true;
+
+      if (productName === "") {
+        displayError('errorProductName', 'Product name is required.');
+        isValid = false;
+      }
+
+      if (productPrice === "") {
+        displayError('errorProductPrice', 'Product price is required.');
+        isValid = false;
+      } else if (isNaN(productPrice) || parseFloat(productPrice) <= 0) {
+        displayError('errorProductPrice', 'Please enter a valid price greater than zero.');
+        isValid = false;
+      }
+
+      if (productDescription === "") {
+        displayError('errorProductDescription', 'Product description is required.');
+        isValid = false;
+      }
+
+      if (productQuantity === "") {
+        displayError('errorProductQuantity', 'Product quantity is required.');
+        isValid = false;
+      } else if (isNaN(productQuantity) || parseInt(productQuantity) <= 0) {
+        displayError('errorProductQuantity', 'Please enter a valid quantity greater than zero.');
+        isValid = false;
+      }
+
+      if (productCategory === "") {
+        displayError('errorProductCategory', 'Please select a product category.');
+        isValid = false;
+      }
+
+      if (isValid) {
+        alert('Product added successfully!');
+      }
+    });
+
+    function displayError(elementId, message) {
+      document.getElementById(elementId).textContent = message;
+    }
+
+    function clearErrors() {
+      const errorElements = document.querySelectorAll('.error');
+      errorElements.forEach(el => el.textContent = '');
+    }
+
+  </script>
+</body>
+
+</html>
