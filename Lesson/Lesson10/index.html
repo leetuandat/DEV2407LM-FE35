@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <style>
+    .cl-blue {
+      color: blue;
+    }
+  </style>
+  
+  <h1>Interact through HTML</h1>
+  <h2 class="t-h2">Interact with HTML through class</h2>
+  <h2 id="t-id">Interact with HTML through ID</h2>
+  <div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate aut culpa animi voluptatibus eius quis rem ipsum, tempora, corrupti suscipit voluptatem dicta! Soluta, deleniti. Temporibus voluptates fugit vitae laboriosam repellat.</p>
+  </div>
+
+  <!-- Case 1: -->
+  <script src="jquery-3.7.1.min.js"></script>
+
+  <!-- Case 2: -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    //Interact through HTML
+    $(`body`).append(`Hello World`);
+    $(`h1`).css(`color`, `red`);
+
+    //Interact with HTML through class
+    $(`.t-h2`).addClass(`cl-blue`);
+
+    //Interact with HTML through ID
+    $(`#t-id`).addClass(`cl-blue`)
+
+    //
+    $(`div p`).css(`background-color`, `green`);
+  </script>
+
+</body>
+</html>

@@ -82,33 +82,33 @@
     renderListCard(listCart);
 
 
-    function subtract(id) {
-      for (let i = 0; i < listCart.length; i++) {
-        if (id == listCart[i].id) {
-          if (listCart[i].quantity > 1) {
-            listCart[i].quantity--;
-          }
-        }
-      }
-      renderListCard(listCart);
-    }
+    // function subtract(id) {
+    //   for (let i = 0; i < listCart.length; i++) {
+    //     if (id == listCart[i].id) {
+    //       if (listCart[i].quantity > 1) {
+    //         listCart[i].quantity--;
+    //       }
+    //     }
+    //   }
+    //   renderListCard(listCart);
+    // }
 
-    function plus(id) {
-      for (let i = 0; i < listCart.length; i++) {
-        if (id == listCart[i].id) {
-          listCart[i].quantity++;
-        }
-      }
-      renderListCard(listCart);
-    }
+    // function plus(id) {
+    //   for (let i = 0; i < listCart.length; i++) {
+    //     if (id == listCart[i].id) {
+    //       listCart[i].quantity++;
+    //     }
+    //   }
+    //   renderListCard(listCart);
+    // }
 
     
-    function deleteItem(id) {
-      listCart = listCart.filter(function(item) {
-        return item.id !== id;
-      });
-      renderListCard(listCart);
-    }
+    // function deleteItem(id) {
+    //   listCart = listCart.filter(function(item) {
+    //     return item.id !== id;
+    //   });
+    //   renderListCard(listCart);
+    // }
   </script>
 
 

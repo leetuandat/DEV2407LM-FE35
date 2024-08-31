@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to use slick?</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+</head>
+
+<body>
+
+  <style>
+    .box-product {
+      width: 20%;
+    }
+  </style>
+
+
+  <div id="list-product">
+    <div class="box-product col-lg-4 col-md-6 p-5">
+      <div class="img-news">
+        <img class="w-100" src="TINTUC_01.jpg" alt="New1">
+      </div>
+      <div class="inner-content mt-3">
+        <h3 class="text-success text-justify">Vietnamese tea drinking culture: past and present story</h3>
+        <p class="text-justify">Thai Nguyen green tea has been a popular, familiar drink for generations. Tea trees
+          appear mainly in the provinces of Thai Nguyen, Phu Tho, Yen Bai, Lam Dong… and are the source of high
+          quality tea products.</p>
+      </div>
+    </div>
+    <div class="box-product col-lg-4 col-md-6 p-5">
+      <div class="img-news">
+        <img class="w-100" src="TINTUC_01.jpg" alt="New1">
+      </div>
+      <div class="inner-content mt-3">
+        <h3 class="text-success text-justify">Vietnamese tea drinking culture: past and present story</h3>
+        <p class="text-justify">Thai Nguyen green tea has been a popular, familiar drink for generations. Tea trees
+          appear mainly in the provinces of Thai Nguyen, Phu Tho, Yen Bai, Lam Dong… and are the source of high
+          quality tea products.</p>
+      </div>
+    </div>
+    <div class="box-product col-lg-4 col-md-6 p-5">
+      <div class="img-news">
+        <img class="w-100" src="TINTUC_01.jpg" alt="New1">
+      </div>
+      <div class="inner-content mt-3">
+        <h3 class="text-success text-justify">Vietnamese tea drinking culture: past and present story</h3>
+        <p class="text-justify">Thai Nguyen green tea has been a popular, familiar drink for generations. Tea trees
+          appear mainly in the provinces of Thai Nguyen, Phu Tho, Yen Bai, Lam Dong… and are the source of high
+          quality tea products.</p>
+      </div>
+    </div>
+    <div class="box-product col-lg-4 col-md-6 p-5">
+      <div class="img-news">
+        <img class="w-100" src="TINTUC_01.jpg" alt="New1">
+      </div>
+      <div class="inner-content mt-3">
+        <h3 class="text-success text-justify">Vietnamese tea drinking culture: past and present story</h3>
+        <p class="text-justify">Thai Nguyen green tea has been a popular, familiar drink for generations. Tea trees
+          appear mainly in the provinces of Thai Nguyen, Phu Tho, Yen Bai, Lam Dong… and are the source of high
+          quality tea products.</p>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+  <script>
+    $('#list-product').slick({
+      infinite: true,
+      slidesToShow: 3,
+      slidesToScroll: 3,
+      dots: true,
+    });
+  </script>
+</body>
+
+</html>
