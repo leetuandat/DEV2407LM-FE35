@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <style>
+    #main {
+      border: 1px solid #ccc;
+      padding: 10px;
+      width: 350px;
+    }
+
+    .clearfix {
+      overflow: hidden;
+      clear: both;
+    }
+
+    #main ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    #main ul li {
+      float: left;
+    }
+
+    #main ul li a {
+      display: block;
+      border: 1px solid #ccc;
+      padding: 5px 10px;
+      text-decoration: none;
+      margin-right: 5px;
+    }
+
+    #content {
+      padding: 15px 0;
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    #red {
+      color: red;
+    }
+
+    #green {
+      color: green;
+    }
+
+    #yellow {
+      color: yellow;
+    }
+
+    #grey {
+      color: gray;
+    }
+
+    #purple {
+      color: purple;
+    }
+  </style>
+
+  <div id="main">
+    <h3>Choose text color</h3>
+    <ul class="clearfix">
+      <li><a href="javascript:void(0)" id="red">Red</a></li>
+      <li><a href="javascript:void(0)" id="green">Green</a></li>
+      <li><a href="javascript:void(0)" id="yellow">Yellow</a></li>
+      <li><a href="javascript:void(0)" id="grey">Grey</a></li>
+      <li><a href="javascript:void(0)" id="purple">Purple</a></li>
+    </ul>
+    <div id="content" class="clearfix">Web with PHP</div>
+  </div>
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>
+    $(document).ready(function () {
+      $(`a`).click(function (e) {
+        color = e.target.id;
+        $(`#content`).css(`color`, color);
+      })
+    })
+  </script>
+</body>
+
+</html>

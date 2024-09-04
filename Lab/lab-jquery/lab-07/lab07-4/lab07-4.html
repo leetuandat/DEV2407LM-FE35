@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+
+  <style>
+    .clearfix {
+      clear: both;
+      overflow: hidden;
+    }
+
+    #main ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    #main ul li {
+      float: left;
+      margin: 5px;
+    }
+
+    #main ul li a {
+      text-decoration: none;
+      border-left: 1px solid #ccc;
+      border-right: 1px solid #ccc;
+      border-top: 1px solid #ccc;
+      padding: 8px 20px;
+      display: block;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      background: #d2d3d5;
+      color: #000;
+    }
+
+    .selected {
+      border-bottom: 1px solid #fff;
+      background: #782a90 !important;
+      color: #FFF !important;
+    }
+
+    #content {
+      border: 1px solid #ccc;
+      width: 500px;
+      height: 300px;
+      margin-top: -1px;
+      padding: 5px 10px;
+    }
+  </style>
+
+
+  <div id="main" class="clearfix">
+    <ul class="clearfix">
+      <li><a href="" class="selected" id="html">HTML</a></li>
+      <li><a href="" id="css">CSS</a></li>
+      <li><a href="" id="jquery">Jquery</a></li>
+      <li><a href="" id="php">PHP</a></li>
+    </ul>
+    <div id="content"></div>
+  </div>
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+
+    <script>
+
+      $(document).ready(function($) {
+        $(`#content`).load(`html.html`);
+        $(`#main ul li a`).click(function(event) {
+
+          event.preventDefault();
+
+          $(`a`).removeClass(`selected`);
+
+          id = event.target.id;
+
+          $(`#` + id).addClass(`selected`);
+
+          $(`#content`).load(`${id}.html`);
+          // E:\VSCode\DEV2407LM-FE35\Lab\lab-jquery\lab-07\lab07-4\html.html
+        })
+      })
+
+    </script>
+
+</body>
+
+</html>

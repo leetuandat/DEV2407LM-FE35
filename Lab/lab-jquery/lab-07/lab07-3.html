@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+<style>
+  #main {
+    width: 670px;
+    height: 446px;
+    margin: 0 auto;
+  }
+  #main .image img {
+    width: 666px;
+  }
+  #thum ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  #thum ul li {
+    float: left;
+    margin-right: 2px;
+  }
+  #thum ul li a img {
+    width: 105px;
+    border: 2px solid #ccc;
+  }
+  .actived {
+    border: 4px solid red !important;
+  }
+</style>
+
+
+
+<div id="main">
+  <div class="image">
+    <img src="../images/anh-thien-nhien-buon.jpg" alt="">
+  </div>
+  <div id="thum">
+    <ul>
+      <li><a href="">
+        <img src="../images/anh-thien-nhien-buon.jpg" alt="" class="actived">
+      </a></li>
+      <li><a href="">
+        <img src="../images/canh-dep-dao-nam-du-viet-nam_055419571.jpg" alt="">
+      </a></li>
+      <li><a href="">
+        <img src="../images/da-lat-sunrise-600nw-1061321777.jpg" alt="">
+      </a></li>
+      <li><a href="">
+        <img src="../images/s.jpg" alt="">
+      </a></li>
+      <li><a href="">
+        <img src="../images/OIP (1).jpg" alt="">
+      </a></li>
+      <li><a href="">
+        <img src="../images/OIP (2).jpg" alt="">
+      </a></li>
+    </ul>
+  </div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+
+<script>
+
+  $(document).ready(function($) {
+    $(`a>img`).click(function(event) {
+      event.preventDefault();
+      img = $(this).attr(`src`);
+      $('.image img').attr('src', img)
+      $(`a>img`).removeClass(`actived`);
+      $(this).addClass('actived');
+    })
+  })
+
+</script>
+
+
+</body>
+</html>
