@@ -12,25 +12,49 @@
 
 <body>
 
-
   <div class="main-content">
     <div class="container">
       <div class="row">
         <div class="col-3 ">
-          <button id="add" class="btn btn-primary">Thêm mới sinh viên</button>
+          <button id="showFormButton" class="btn btn-primary">Thêm mới sinh viên</button>
         </div>
         <div class="col-6">
-          <div class="input-group">
-            <input type="search" class="form-control" placeholder="Search Home" id="searchUser">
+          <div class="input-group mb-3">
+            <input type="search" class="form-control" placeholder="Tìm kiếm sinh viên" id="searchUser">
             <button id="searchButton" class="btn btn-outline-secondary">Tìm kiếm</button>
           </div>
         </div>
-        <div class="col-3">
-          <input type="text" class="form-control" placeholder="Sắp xếp">
+      </div>
+
+
+      <div id="addStudentForm" style="display: none;">
+        <h4>Thêm mới sinh viên</h4>
+        <div class="row mb-3">
+          <div class="col-2">
+            <input type="text" id="studentId" class="form-control" placeholder="Mã sinh viên">
+          </div>
+          <div class="col-3">
+            <input type="text" id="studentName" class="form-control" placeholder="Tên sinh viên">
+          </div>
+          <div class="col-2">
+            <input type="number" id="studentAge" class="form-control" placeholder="Tuổi">
+          </div>
+          <div class="col-2">
+            <select id="studentSex" class="form-select">
+              <option value="true">Nam</option>
+              <option value="false">Nữ</option>
+            </select>
+          </div>
+          <div class="col-3">
+            <button id="addStudent" class="btn btn-success">Thêm sinh viên</button>
+            <button id="hideFormButton" class="btn btn-secondary">Hủy</button>
+          </div>
         </div>
       </div>
+
+
       <table class="table table-bordered table-striped" id="infoTable">
-        <thead class="">
+        <thead>
           <tr>
             <th>#</th>
             <th>Mã sinh viên</th>
@@ -41,24 +65,12 @@
           </tr>
         </thead>
         <tbody id="list-student">
-          <!-- <tr>
-            <td>1</td>
-            <td>SV101</td>
-            <td>Nguyễn Văn A</td>
-            <td>20</td>
-            <td>Nam</td>
-            <td>
-              <button class="btn btn-info btn-sm">Xem</button>
-              <button class="btn btn-warning btn-sm">Sửa</button>
-              <button class="btn btn-danger btn-sm">Xóa</button>
-            </td>
-          </tr> -->
+
+
         </tbody>
       </table>
     </div>
   </div>
-
-
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
@@ -68,7 +80,6 @@
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <script>
-
     var students = [
       {
         studentId: `SV001`,
@@ -111,48 +122,98 @@
     function renderStudent(student, index) {
       var renderStudent = `
         <tr>
-            <td>${index + 1}</td>
-            <td>${student.studentId}</td>
-            <td>${student.studentName}</td>
-            <td>${student.age}</td>
-            <td>${student.sex}</td>
-            <td>
-              <button class="btn btn-info btn-sm">Xem</button>
-              <button class="btn btn-warning btn-sm">Sửa</button>
-              <button class="btn btn-danger btn-sm">Xóa</button>
-            </td>
-          </tr>
-        `;
+          <td>${index + 1}</td>
+          <td>${student.studentId}</td>
+          <td>${student.studentName}</td>
+          <td>${student.age}</td>
+          <td>${student.sex ? 'Nam' : 'Nữ'}</td>
+          <td>
+            <button class="btn btn-info btn-sm">Xem</button>
+            <button class="btn btn-warning btn-sm">Sửa</button>
+            <button class="btn btn-danger btn-sm delete-btn" data-index="${index}">Xóa</button>
+          </td>
+        </tr>
+      `;
       return renderStudent;
     }
 
     const renderListStudent = (students) => {
-      $(`#list-student`).empty();
-
+      $('#list-student').empty();
       students.forEach((student, index) => {
-        $(`#list-student`).append(renderStudent(student, index));
-      })
+        $('#list-student').append(renderStudent(student, index));
+      });
+  
+      $('.delete-btn').click(function () {
+        const studentIndex = $(this).data('index');
+        deleteStudent(studentIndex);
+      });
     }
 
     const searchStudent = () => {
-      const query = $(`#searchUser`).val().toLowerCase();
+      const query = $('#searchUser').val().toLowerCase();
       const filteredStudents = students.filter(student => student.studentName.toLowerCase().includes(query));
       renderListStudent(filteredStudents);
+    }
+
+    const addStudent = () => {
+      const studentId = $('#studentId').val();
+      const studentName = $('#studentName').val();
+      const studentAge = $('#studentAge').val();
+      const studentSex = $('#studentSex').val() === 'true'; 
+
+      if (studentId && studentName && studentAge) {
+        const newStudent = {
+          studentId: studentId,
+          studentName: studentName,
+          age: parseInt(studentAge),
+          sex: studentSex
+        };
+
+        students.push(newStudent); 
+        renderListStudent(students); 
+
+        $('#studentId').val('');
+        $('#studentName').val('');
+        $('#studentAge').val('');
+        $('#studentSex').val('true');
+        
+        $('#addStudentForm').hide();
+      } else {
+        alert('Vui lòng nhập đầy đủ thông tin!');
+      }
+    }
+
+    const deleteStudent = (index) => {
+      students.splice(index, 1);
+
+      renderListStudent(students);
     }
 
     $(document).ready(function () {
       renderListStudent(students);
 
-      $(`#searchButton`).click(function () {
+      $('#searchButton').click(function () {
         searchStudent();
       });
 
-      $(`#searchUser`).keypress(function (e) {
+      $('#addStudent').click(function () {
+        addStudent();
+      });
+
+      $('#searchUser').keypress(function (e) {
         if (e.which === 13) {
           searchStudent();
         }
-      })
-    })
+      });
+
+      $('#showFormButton').click(function () {
+        $('#addStudentForm').toggle();
+      });
+
+      $('#hideFormButton').click(function () {
+        $('#addStudentForm').hide(); 
+      });
+    });
 
   </script>
 </body>
