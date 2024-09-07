@@ -43,7 +43,6 @@
   <div class="container">
     <div class="row" id="product-grid">
 
-
     </div>
   </div>
 
@@ -656,21 +655,20 @@
     ];
 
     function renderProducts(data) {
-      var productGrid = document.getElementById("product-grid");
+      var productGrid = $(`#product-grid`);
       data.forEach(function (product) {
-        var colDiv = document.createElement("div");
-        colDiv.className = "col-md-3";
 
         var productCard = `
-                <div class="product-card">
-                    <img src="${product.image}" alt="${product.title}">
-                    <div class="product-title">${product.title}</div>
-                    <div class="product-price">Giá: ${product.priceNew.toLocaleString()}₫</div>
-                </div>
-            `;
+        <div class="col-md-3">
+          <div class="product-card">
+            <img src="${product.image}" alt="${product.title}">
+            <div class="product-title">${product.title}</div>
+            <div class="product-price">Giá: ${product.priceNew.toLocaleString()}₫</div>
+          </div>
+        </div>
+        `;
+        productGrid.append(productCard);
 
-        colDiv.innerHTML = productCard;
-        productGrid.appendChild(colDiv);
       });
     }
 
