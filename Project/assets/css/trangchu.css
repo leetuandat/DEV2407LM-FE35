@@ -1,0 +1,392 @@
+/* banner Trang chu */
+
+#banner-trang-chu {
+  background-image: url(../images/trangchu/TRANGCHU.png);
+  height: 51.5rem;
+}
+
+#banner-trang-chu .container {
+  position: relative;
+}
+
+#banner-trang-chu .container .banner-content {
+  position: absolute;
+  top: 7.25rem;
+  left: 3.25rem;
+}
+
+#banner-trang-chu h3,span {
+  font-family: Gotham-Ultra;
+  font-size: 2.875rem;
+  text-transform: uppercase;
+}
+
+#banner-trang-chu p {
+  width: 35rem;
+  text-align: justify;
+}
+
+#banner-trang-chu .btn-banner {
+  padding: 1.25rem 2rem;
+  text-transform: uppercase;
+  background-color: #bd945f;
+  font-size: 1.2rem;
+  border: none;
+  color: #fff;
+  font-family: Gotham-Ultra;
+}
+
+@media (max-width: 1024px) {
+  #banner-trang-chu .container .banner-content {
+    top: 5rem; /* Giảm khoảng cách phía trên */
+    left: 2rem; /* Giảm khoảng cách bên trái */
+  }
+
+  #banner-trang-chu h3, #banner-trang-chu span {
+    font-size: 2.5rem; /* Giảm kích thước chữ */
+  }
+
+  #banner-trang-chu p {
+    width: 30rem; /* Giảm chiều rộng đoạn văn */
+  }
+}
+
+/* Responsive cho màn hình từ 768px trở xuống */
+@media (max-width: 768px) {
+  #banner-trang-chu .container .banner-content {
+    top: 4rem; /* Giảm khoảng cách phía trên */
+    left: 1.5rem; /* Giảm khoảng cách bên trái */
+  }
+
+  #banner-trang-chu h3, #banner-trang-chu span {
+    font-size: 2rem; /* Giảm kích thước chữ */
+  }
+
+  #banner-trang-chu p {
+    width: 25rem; /* Giảm chiều rộng đoạn văn */
+    font-size: 1rem; /* Giảm kích thước chữ trong đoạn văn */
+  }
+
+  #banner-trang-chu .btn-banner {
+    padding: 1rem 1.5rem; /* Giảm kích thước padding cho nút */
+    font-size: 1rem; /* Giảm kích thước chữ trong nút */
+  }
+}
+
+/* Responsive cho màn hình từ 600px trở xuống */
+@media (max-width: 600px) {
+  #banner-trang-chu {
+    height: 40rem; /* Giảm chiều cao banner */
+  }
+
+  #banner-trang-chu .container .banner-content {
+    position: relative;
+    top: 2rem; /* Giảm khoảng cách phía trên */
+    left: 0; /* Căn giữa nội dung */
+    text-align: center; /* Căn giữa nội dung */
+  }
+
+  #banner-trang-chu h3, #banner-trang-chu span {
+    font-size: 1.8rem; /* Giảm kích thước chữ */
+  }
+
+  #banner-trang-chu p {
+    width: 20rem; /* Giảm chiều rộng đoạn văn */
+    margin: 0 auto; /* Căn giữa đoạn văn */
+    font-size: 0.9rem; /* Giảm kích thước chữ trong đoạn văn */
+  }
+
+  #banner-trang-chu .btn-banner {
+    padding: 0.75rem 1rem; /* Giảm kích thước padding */
+    font-size: 0.9rem; /* Giảm kích thước chữ trong nút */
+    margin: 0 auto; /* Căn giữa nút */
+  }
+}
+/* End banner Trang chu */
+
+/* products */
+#products{
+  background-color: #f3f3f3;
+  position: relative;
+  padding-bottom: 50px;
+}
+
+#products .container {
+  position: relative;
+  top: -60px;
+  margin: 0 auto;
+  right: 0;
+  left: 0;
+}
+
+#products .list-product {
+  background-color: white;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
+  padding: 40px;
+}
+
+#products .list-product .item {
+  text-align: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#products .list-product .item img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+
+#products .list-product .item p {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  #products .list-product {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  #products .list-product .item img {
+    width: 130px; 
+    height: 130px;
+  }
+}
+
+@media (max-width: 768px) {
+  #products .container {
+    top: -40px; 
+  }
+
+  #products .list-product {
+    grid-template-columns: repeat(2, 1fr); 
+    padding: 20px; 
+    gap: 15px; 
+  }
+
+  #products .list-product .item img {
+    width: 115px; 
+    height: 115px;
+  }
+}
+
+@media (max-width: 600px) {
+  #products .container {
+    top: -30px;
+  }
+
+  #products .list-product {
+    grid-template-columns: repeat(1, 1fr); 
+    padding: 15px; 
+    gap: 10px; 
+  }
+
+  #products .list-product .item img {
+    width: 100px; 
+    height: 100px;
+  }
+
+  #products .list-product .item p {
+    font-size: 14px; 
+  }
+}
+/* End products */
+
+/* Top Product */
+#top-product {
+  background-color: #f3f3f3;
+  border-radius: 10px;
+}
+
+#top-product .inner-title {
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  color: #2c2e53; 
+  position: relative;
+  margin-bottom: 50px;
+}
+
+
+#top-product .inner-title::after {
+  content: '';
+  display: block;
+  width: 160px; 
+  height: 10px; 
+  background-color: #bd945f; 
+  position: absolute;
+  bottom: -10px; 
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#top-product .product-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+#slide-content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+#slide-content h2 {
+  color: #2c2e53; 
+  font-size: 1rem;
+  font-weight: bolder;
+  font-family: Gotham-Ultra;
+  margin-top: 20px;
+}
+
+#slide-content .product-item {
+  padding: 10px;
+  text-align: center;
+}
+
+#slide-content .product-item>p {
+  margin-top: -5px;
+  color: #888888;
+  font-size: 12px;
+}
+
+#slide-content .product-item .rating {
+  color: #ffcc00;
+  font-size: 1.6rem;
+  padding: 0;
+  margin-top: -12px;
+  margin-bottom: 0px;
+}
+
+#slide-content .product-item .price {
+  font-weight: bold;
+  color: black;
+  font-size: 12px;
+}
+
+.slick-prev,
+.slick-next {
+  font-size: 30px;
+  line-height: 1;
+  color: white;
+  background-color: #bd945f;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  border: none;
+  border-radius: 50%;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.slick-prev {
+  left: -60px; 
+}
+
+.slick-next {
+  right: -60px; 
+}
+/* End Top Product */
+
+
+/* News */
+#news .row {
+  display: flex; 
+  align-items: stretch; 
+}
+
+#news .left-column, #news .right-column {
+  border-radius: 10px;
+  overflow: hidden; 
+}
+
+#news .left-column {
+  position: relative;
+}
+
+#news .left-column img, #news .right-column img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+#news .left-column img:hover, #news .right-column img:hover {
+  transform: scale(1.05); 
+}
+
+#news .content-overlay {
+  position: absolute;
+  bottom: 30px; 
+  left: 20px;
+  right: 20px;
+  background-color: #bd945f; 
+  padding: 20px;
+  border-radius: 10px; 
+  color: #ffffff; /
+}
+
+#news .content-overlay h4 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+#news .content-overlay p {
+  font-size: 1rem;
+}
+
+#news .right-column .item {
+  /* border: 1px solid #e8e8e8; */
+  border-radius: 10px;
+  /* padding: 20px; */
+  margin-bottom: 20px; 
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  background-color: #ffffff;
+}
+
+#news .right-column .item:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+  transform: translateY(-5px); 
+}
+
+#news .right-column .item img {
+  width: 100%; 
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 0; 
+}
+
+#news .right-column .item h5 {
+  margin-top: 0; 
+}
+
+#news .read-more {
+  display: block;
+  text-align: right;
+  padding-top: 15px;
+  color: #e2a94f;
+  font-weight: bold;
+  font-size: 18px;
+  transition: color 0.3s ease-in-out;
+}
+
+#news .read-more:hover {
+  color: #f29d50; 
+}
+
+
+
+/* End News */

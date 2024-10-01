@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sản Phẩm Nổi Bật</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f3f3f3;
+      }
+
+      #top-product {
+        text-align: center;
+        padding: 60px 0;
+        background-color: #f3f3f3;
+      }
+
+      #top-product .inner-title {
+        font-size: 36px;
+        font-weight: bold;
+        color: #2c2e53;
+        position: relative;
+        display: inline-block;
+        margin-bottom: 30px;
+      }
+
+      #top-product .inner-title::after {
+        content: '';
+        display: block;
+        width: 100px;
+        height: 4px;
+        background-color: #bd945f;
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      #slide-content {
+        position: relative;
+      }
+
+      .slick-prev,
+      .slick-next {
+        font-size: 30px;
+        line-height: 1;
+        color: #bd945f;
+        position: absolute;
+        top: 40%;
+        transform: translateY(-50%);
+        border: none;
+        background: none;
+        z-index: 2;
+        cursor: pointer;
+      }
+
+      .slick-prev {
+        left: -40px; /* Điều chỉnh vị trí của nút mũi tên bên trái */
+      }
+
+      .slick-next {
+        right: -40px; /* Điều chỉnh vị trí của nút mũi tên bên phải */
+      }
+
+      #slide-content .product-item {
+        background-color: white;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 0 10px;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      #slide-content .product-item h2 {
+        font-size: 20px;
+        font-weight: bold;
+        color: #2c2e53;
+        margin: 15px 0 10px;
+      }
+
+      #slide-content .product-item .rating {
+        color: #ffcc00;
+        font-size: 16px;
+        margin-bottom: 5px;
+      }
+
+      #slide-content .product-item .price {
+        font-weight: bold;
+        color: #333;
+        margin-top: 10px;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="top-product">
+      <div class="container">
+        <div class="inner-title">SẢN PHẨM NỔI BẬT</div>
+        <div id="slide-content">
+          <div class="product-item">
+            <img src="./assets/images/trangchu/sp-1.jpg" alt="Giường Châu Âu" />
+            <h2>GIƯỜNG CHÂU ÂU</h2>
+            <p class="rating">★★★★★</p>
+            <p>(Size lớn, trắng sữa)</p>
+            <p class="price">8.999.000 VNĐ</p>
+          </div>
+          <div class="product-item">
+            <img src="./assets/images/trangchu/sp-2.jpg" alt="Bàn Làm Việc" />
+            <h2>BÀN LÀM VIỆC</h2>
+            <p class="rating">★★★★★</p>
+            <p>(Size vừa, trắng nâu)</p>
+            <p class="price">3.999.000 VNĐ</p>
+          </div>
+          <div class="product-item">
+            <img src="./assets/images/trangchu/sp-3.jpg" alt="Tủ Quần Áo" />
+            <h2>TỦ QUẦN ÁO</h2>
+            <p class="rating">★★★★★</p>
+            <p>(4 ngăn, trắng gỗ)</p>
+            <p class="price">12.999.000 VNĐ</p>
+          </div>
+          <div class="product-item">
+            <img src="./assets/images/trangchu/sp-4.jpg" alt="Kệ Để Đồ" />
+            <h2>KỆ ĐỂ ĐỒ</h2>
+            <p class="rating">★★★★★</p>
+            <p>(4 ngăn, trắng gỗ)</p>
+            <p class="price">2.499.000 VNĐ</p>
+          </div>
+          <div class="product-item">
+            <img src="./assets/images/trangchu/sp-1.jpg" alt="Giường Châu Âu" />
+            <h2>GIƯỜNG CHÂU ÂU</h2>
+            <p class="rating">★★★★★</p>
+            <p>(Size lớn, trắng sữa)</p>
+            <p class="price">8.999.000 VNĐ</p>
+          </div>
+          <div class="product-item">
+            <img src="./assets/images/trangchu/sp-2.jpg" alt="Bàn Làm Việc" />
+            <h2>BÀN LÀM VIỆC</h2>
+            <p class="rating">★★★★★</p>
+            <p>(Size vừa, trắng nâu)</p>
+            <p class="price">3.999.000 VNĐ</p>
+          </div>
+          <div class="product-item">
+            <img src="./assets/images/trangchu/sp-3.jpg" alt="Tủ Quần Áo" />
+            <h2>TỦ QUẦN ÁO</h2>
+            <p class="rating">★★★★★</p>
+            <p>(4 ngăn, trắng gỗ)</p>
+            <p class="price">12.999.000 VNĐ</p>
+          </div>
+          <div class="product-item">
+            <img src="./assets/images/trangchu/sp-4.jpg" alt="Kệ Để Đồ" />
+            <h2>KỆ ĐỂ ĐỒ</h2>
+            <p class="rating">★★★★★</p>
+            <p>(4 ngăn, trắng gỗ)</p>
+            <p class="price">2.499.000 VNĐ</p>
+          </div>
+          <div class="product-item">
+            <img src="./assets/images/trangchu/sp-1.jpg" alt="Giường Châu Âu" />
+            <h2>GIƯỜNG CHÂU ÂU</h2>
+            <p class="rating">★★★★★</p>
+            <p>(Size lớn, trắng sữa)</p>
+            <p class="price">8.999.000 VNĐ</p>
+          </div>
+          <div class="product-item">
+            <img src="./assets/images/trangchu/sp-2.jpg" alt="Bàn Làm Việc" />
+            <h2>BÀN LÀM VIỆC</h2>
+            <p class="rating">★★★★★</p>
+            <p>(Size vừa, trắng nâu)</p>
+            <p class="price">3.999.000 VNĐ</p>
+          </div>
+          <div class="product-item">
+            <img src="./assets/images/trangchu/sp-3.jpg" alt="Tủ Quần Áo" />
+            <h2>TỦ QUẦN ÁO</h2>
+            <p class="rating">★★★★★</p>
+            <p>(4 ngăn, trắng gỗ)</p>
+            <p class="price">12.999.000 VNĐ</p>
+          </div>
+          <div class="product-item">
+            <img src="./assets/images/trangchu/sp-4.jpg" alt="Kệ Để Đồ" />
+            <h2>KỆ ĐỂ ĐỒ</h2>
+            <p class="rating">★★★★★</p>
+            <p>(4 ngăn, trắng gỗ)</p>
+            <p class="price">2.499.000 VNĐ</p>
+          </div>
+          <!-- Thêm các sản phẩm khác nếu cần -->
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#slide-content").slick({
+          dots: false, // Ẩn các chấm điều hướng
+          infinite: false,
+          speed: 300,
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          prevArrow: '<button type="button" class="slick-prev"><</button>',
+          nextArrow: '<button type="button" class="slick-next">></button>',
+          responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                infinite: true,
+              },
+            },
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+              },
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+              },
+            },
+          ],
+        });
+      });
+    </script>
+  </body>
+</html>
