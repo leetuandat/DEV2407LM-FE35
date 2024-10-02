@@ -37,69 +37,74 @@
 }
 
 @media (max-width: 1024px) {
+  #banner-trang-chu {
+    height: 35.5rem;
+  }
+
   #banner-trang-chu .container .banner-content {
-    top: 5rem; /* Giảm khoảng cách phía trên */
-    left: 2rem; /* Giảm khoảng cách bên trái */
+    top: 5rem; 
+    left: 2rem; 
   }
 
   #banner-trang-chu h3, #banner-trang-chu span {
-    font-size: 2.5rem; /* Giảm kích thước chữ */
+    font-size: 2.5rem; 
   }
 
   #banner-trang-chu p {
-    width: 30rem; /* Giảm chiều rộng đoạn văn */
+    width: 30rem; 
   }
 }
 
-/* Responsive cho màn hình từ 768px trở xuống */
 @media (max-width: 768px) {
+  #banner-trang-chu {
+    height: 25rem;
+  }
+
   #banner-trang-chu .container .banner-content {
-    top: 4rem; /* Giảm khoảng cách phía trên */
-    left: 1.5rem; /* Giảm khoảng cách bên trái */
+    top: 4rem; 
+    left: 1.5rem; 
   }
 
   #banner-trang-chu h3, #banner-trang-chu span {
-    font-size: 2rem; /* Giảm kích thước chữ */
+    font-size: 2rem; 
   }
 
   #banner-trang-chu p {
-    width: 25rem; /* Giảm chiều rộng đoạn văn */
-    font-size: 1rem; /* Giảm kích thước chữ trong đoạn văn */
+    width: 25rem; 
+    font-size: 1rem; 
   }
 
   #banner-trang-chu .btn-banner {
-    padding: 1rem 1.5rem; /* Giảm kích thước padding cho nút */
-    font-size: 1rem; /* Giảm kích thước chữ trong nút */
+    padding: 1rem 1.5rem; 
+    font-size: 1rem; 
   }
 }
 
-/* Responsive cho màn hình từ 600px trở xuống */
 @media (max-width: 600px) {
   #banner-trang-chu {
-    height: 40rem; /* Giảm chiều cao banner */
+    height: 25rem; 
   }
 
   #banner-trang-chu .container .banner-content {
     position: relative;
-    top: 2rem; /* Giảm khoảng cách phía trên */
-    left: 0; /* Căn giữa nội dung */
-    text-align: center; /* Căn giữa nội dung */
+    top: 2rem; 
+    left: 0; 
+    text-align: center; 
   }
 
   #banner-trang-chu h3, #banner-trang-chu span {
-    font-size: 1.8rem; /* Giảm kích thước chữ */
+    font-size: 1.8rem; 
   }
-
   #banner-trang-chu p {
-    width: 20rem; /* Giảm chiều rộng đoạn văn */
-    margin: 0 auto; /* Căn giữa đoạn văn */
-    font-size: 0.9rem; /* Giảm kích thước chữ trong đoạn văn */
+    width: 20rem; 
+    margin: 0 auto; 
+    font-size: 0.9rem; 
   }
 
   #banner-trang-chu .btn-banner {
-    padding: 0.75rem 1rem; /* Giảm kích thước padding */
-    font-size: 0.9rem; /* Giảm kích thước chữ trong nút */
-    margin: 0 auto; /* Căn giữa nút */
+    padding: 0.75rem 1rem; 
+    font-size: 0.9rem; 
+    margin: 0 auto;
   }
 }
 /* End banner Trang chu */
@@ -386,7 +391,6 @@
 #news .read-more:hover {
   color: #f29d50; 
 }
-
 
 
 /* End News */

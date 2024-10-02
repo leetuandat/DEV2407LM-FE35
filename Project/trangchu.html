@@ -471,14 +471,23 @@
 
     <!-- header -->
     <script>
-      const menuIcon = document.querySelector(".inner-icon-mobi");
-      const menu = document.querySelector("header .menu");
+      document.addEventListener("DOMContentLoaded", function () {
+        const menu = document.querySelector("header .menu");
+        const innerIconMobi = document.querySelector("header .inner-icon-mobi");
 
-      menuIcon.addEventListener("click", function () {
-        menu.classList.toggle("active"); 
+        innerIconMobi.addEventListener("click", function () {
+          if (menu.classList.contains("active")) {
+            menu.classList.remove("active");
+            menu.classList.add("hide");
+          } else {
+            menu.classList.remove("hide");
+            menu.classList.add("active");
+          }
+          innerIconMobi.classList.toggle("rotate");
+        });
       });
     </script>
-    <!-- header -->
+    <!-- End header -->
 
     <script>
       $(document).ready(function () {
