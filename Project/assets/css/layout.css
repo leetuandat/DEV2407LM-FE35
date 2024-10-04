@@ -16,6 +16,74 @@ a {
   max-width: 1280px;
 }
 
+/* Button */
+.btn-banner {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  height: 50px;
+  margin: 20px auto;
+  background: #bd945f;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  transition: color 0.5s ease;
+}
+
+.btn-banner .content {
+  position: relative; 
+  z-index: 2; 
+}
+/* 3ad2d0 */
+
+.btn-banner span {
+  position: absolute;
+  width: 25%;
+  height: 100%;
+  background-color: white;
+  transform: translateY(150%) scale(0.5); 
+  border-radius: 50%;
+  transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out;
+  z-index: 1;
+  pointer-events: none; 
+}
+
+.btn-banner span:nth-of-type(1) {
+  left: 0%;
+  transition-delay: 0.1s;
+}
+
+.btn-banner span:nth-of-type(2) {
+  left: 25%;
+  transition-delay: 0.2s;
+}
+
+.btn-banner span:nth-of-type(3) {
+  left: 50%;
+  transition-delay: 0.4s;
+}
+
+.btn-banner span:nth-of-type(4) {
+  left: 75%;
+  transition-delay: 0.6s;
+}
+
+.btn-banner:hover {
+  color: #1E0F21; 
+}
+
+.btn-banner:hover span {
+  transform: translateY(0) scale(2.74); 
+  background-color: rgb(255, 223, 144); 
+  pointer-events: none; 
+}
+/* End Button */
+
+/* Header */
 header .menu a {
   text-transform: uppercase;
   color: #000;
@@ -198,4 +266,5 @@ header .menu.hide {
   animation: slideUp 1s ease-in-out;
   transition-duration: 1s;
 }
+/* End Header */
 
