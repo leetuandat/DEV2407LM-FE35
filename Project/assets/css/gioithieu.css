@@ -78,7 +78,16 @@
 
 .introduce {
   padding: 60px 0;
-  background-color: #f9f9f9;
+  background-color: #f3f3f3;
+  position: relative;
+}
+
+.introduce>.container {
+    background-color: #fff;
+    padding: 80px;
+    border-radius: 8px;
+    position: relative;
+    top: -100px;
 }
 
 
