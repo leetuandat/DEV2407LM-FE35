@@ -3,6 +3,8 @@
 #banner-trang-chu {
   background-image: url(../images/trangchu/TRANGCHU.png);
   height: 51.5rem;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #banner-trang-chu .container {
@@ -980,7 +982,7 @@
 }
 
 .partners-slider {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -1016,42 +1018,174 @@
   color: #fff;
 }
 
+.service-experience-section::before {
+  content: url(../images/trangchu/lienhe-1.png);
+  position: absolute;
+  background-color: none;
+  left: 4rem;
+  top: -7rem;
+}
+
 .service-experience-section .content {
   position: relative;
   z-index: 2;
+}
+
+.service-experience-section .inner-text {
+  display: flex;
+  justify-content: end;
 }
 
 .service-experience-section h2 {
   font-size: 28px; 
   font-weight: normal;
   margin: 0;
+  position: relative;
+  /* text-align: left; */
+}
+
+.service-experience-section h2::before {
+  content: "";
+  display: block;
+  width: 160px; 
+  height: 10px;
+  background-color: white;
+  position: absolute;
+  top: 100%;
 }
 
 .service-experience-section h2 strong {
   font-weight: bold;
 }
 
+.service-experience-section .contact-info {
+  display: flex;
+  justify-content: end;
+}
+
 .service-experience-section h3 {
   margin-bottom: 10px;
   font-size: 20px;
   font-weight: normal;
-  text-align: right;
+  /* text-align: right; */
 }
 
 .service-experience-section .form-control {
   width: 250px;
+  border-radius: 0;
 }
 
 .service-experience-section .btn-primary {
-  background-color: #bd945f;
+  background-color: white;
+  color: #595c5f;
   border-color: #bd945f;
   font-weight: bold;
+  border-radius: 0;
+  margin-left: 10px;
 }
 
 .service-experience-section .btn-primary:hover {
   background-color: #a3784c;
   border-color: #a3784c;
+  color: white;
 }
 
+@media (max-width: 992px) {
+  .service-experience-section {
+      height: auto;
+      padding: 20px 0;
+  }
+
+  .service-experience-section::before {
+    left: -4rem;
+    top: -12rem;
+    transform: scale(0.4);
+  }
+
+  .service-experience-section h2 {
+      font-size: 24px;
+  }
+
+  .service-experience-section .contact-info {
+      justify-content: center;
+      margin-top: 20px;
+  }
+
+  .service-experience-section h3 {
+      text-align: center;
+  }
+
+  .service-experience-section .form-control {
+      width: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-experience-section {
+      text-align: center;
+      padding: 40px 0;
+  }
+
+  .service-experience-section .row {
+      flex-direction: column;
+  }
+
+  .service-experience-section::before {
+      left: -5rem;
+      top: -4rem;
+      transform: scale(0.5); 
+  }
+
+  .service-experience-section h2::before {
+    transform: translateX(38%);
+  }
+
+  .service-experience-section .inner-text {
+      justify-content: center;
+      text-align: center;
+  }
+
+  .service-experience-section .contact-info {
+    justify-content: center; 
+    text-align: center; 
+  }
+
+  .service-experience-section .form-control {
+    width: 100%; 
+    border-radius: 0;
+    margin-bottom: 10px; 
+  }
+
+  .service-experience-section .form-inline {
+      flex-direction: row; 
+      justify-content: center;
+      align-items: center; 
+      flex-wrap: wrap; 
+  }
+
+  .service-experience-section .btn-primary {
+      width: auto; 
+      margin-left: 0;
+      height: 80%;
+  }
+}
+
+
+@media (max-width: 576px) {
+  .service-experience-section h2 {
+      font-size: 20px;
+  }
+
+  .service-experience-section h3 {
+      font-size: 18px;
+  }
+
+  .service-experience-section::before {
+      display: none;
+  }
+}
 /* End contact */
+
+
+
 
