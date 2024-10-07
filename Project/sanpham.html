@@ -30,7 +30,7 @@
               <a class="nav-link active" aria-current="page" href="trangchu.html">Trang chủ</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="gioithieu.html'">Giới thiệu</a>
+              <a class="nav-link" href="gioithieu.html">Giới thiệu</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="sanpham.html">Sản phẩm</a>
@@ -108,7 +108,7 @@
       </button>
     </div>
 
-    <button type="button" class="btn-banner btn-sanpham">
+    <button type="button" class="btn-banner btn-sanpham" id="btn-buy-now">
       <div class="content">Mua ngay</div>
       <span></span>
       <span></span>
@@ -119,7 +119,7 @@
 
 
   <!-- Living room -->
-  <section class="product-section living-room">
+  <section class="product-section living-room" id="living-room">
     <div class="container bg-white p-5">
       <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 class="section-title">PHÒNG KHÁCH</h2>
@@ -226,8 +226,7 @@
         <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
           <div class="product-card">
             <div class="img-wrapper">
-              <img src="./assets/images/sanpham/giuong-ngu.png" class="img-fluid"
-                alt="Bàn uống nước 2" />
+              <img src="./assets/images/sanpham/giuong-ngu.png" class="img-fluid" alt="Bàn uống nước 2" />
             </div>
             <div class="product-info">
               <h4>GIƯỜNG GỖ</h4>
@@ -305,8 +304,7 @@
         <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
           <div class="product-card">
             <div class="img-wrapper">
-              <img src="./assets/images/sanpham/ban-tra.png" class="img-fluid"
-                alt="Bàn uống nước 2" />
+              <img src="./assets/images/sanpham/ban-tra.png" class="img-fluid" alt="Bàn uống nước 2" />
             </div>
             <div class="product-info">
               <h4>BÀN TRÀ</h4>
@@ -384,8 +382,7 @@
         <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
           <div class="product-card">
             <div class="img-wrapper">
-              <img src="./assets/images/sanpham/bon-rua-tay.png" class="img-fluid"
-                alt="Bàn uống nước 2" />
+              <img src="./assets/images/sanpham/bon-rua-tay.png" class="img-fluid" alt="Bàn uống nước 2" />
             </div>
             <div class="product-info">
               <h4>BỒN RỬA TAY</h4>
@@ -463,8 +460,7 @@
         <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
           <div class="product-card">
             <div class="img-wrapper">
-              <img src="./assets/images/sanpham/giuong-tang.png" class="img-fluid"
-                alt="Bàn uống nước 2" />
+              <img src="./assets/images/sanpham/giuong-tang.png" class="img-fluid" alt="Bàn uống nước 2" />
             </div>
             <div class="product-info">
               <h4>GIƯỜNG TẦNG</h4>
@@ -542,8 +538,7 @@
         <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
           <div class="product-card">
             <div class="img-wrapper">
-              <img src="./assets/images/sanpham/ban-lam-viec.png" class="img-fluid"
-                alt="Bàn uống nước 2" />
+              <img src="./assets/images/sanpham/ban-lam-viec.png" class="img-fluid" alt="Bàn uống nước 2" />
             </div>
             <div class="product-info">
               <h4>BÀN LÀM VIỆC</h4>
@@ -621,8 +616,7 @@
         <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
           <div class="product-card">
             <div class="img-wrapper">
-              <img src="./assets/images/sanpham/cau-thang2.png" class="img-fluid"
-                alt="Bàn uống nước 2" />
+              <img src="./assets/images/sanpham/cau-thang2.png" class="img-fluid" alt="Bàn uống nước 2" />
             </div>
             <div class="product-info">
               <h4>CẦU THANG 2</h4>
@@ -700,8 +694,7 @@
         <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
           <div class="product-card">
             <div class="img-wrapper">
-              <img src="./assets/images/sanpham/guong2.png" class="img-fluid"
-                alt="Bàn uống nước 2" />
+              <img src="./assets/images/sanpham/guong2.png" class="img-fluid" alt="Bàn uống nước 2" />
             </div>
             <div class="product-info">
               <h4>GƯƠNG 2</h4>
@@ -831,7 +824,6 @@
       const breadcrumbContainer = document.querySelector(".breadcrumb");
       function updateBreadcrumb(currentPage) {
         breadcrumbContainer.innerHTML = "";
-
         const homeCrumb = document.createElement("li");
         homeCrumb.className = "breadcrumb-item";
         homeCrumb.innerHTML = `<a href="/">Trang chủ</a>`;
@@ -842,22 +834,79 @@
         currentCrumb.setAttribute("aria-current", "page");
         currentCrumb.textContent = currentPage;
         breadcrumbContainer.appendChild(currentCrumb);
+        localStorage.setItem("breadcrumb", JSON.stringify({ currentPage }));
       }
-
+      const pathname = window.location.pathname;
+      let savedBreadcrumb = localStorage.getItem("breadcrumb");
+      let currentPage = "";
+      switch (pathname) {
+        case "/":
+          currentPage = "Trang chủ";
+          break;
+        case "/lienhe.html":
+          currentPage = "Liên hệ";
+          break;
+        case "/sanpham.html":
+          currentPage = "Sản phẩm";
+          break;
+        case "/tatcasanpham.html":
+          currentPage = "Tất cả sản phẩm";
+          break;
+        default:
+          currentPage = document.title || "Trang khác";
+          break;
+      }
+      if (!savedBreadcrumb || JSON.parse(savedBreadcrumb).currentPage !== currentPage) {
+        updateBreadcrumb(currentPage);
+      } else {
+        const { currentPage: savedCurrentPage } = JSON.parse(savedBreadcrumb);
+        updateBreadcrumb(savedCurrentPage);
+      }
       const navLinks = document.querySelectorAll(".nav-link");
       navLinks.forEach((link) => {
         link.addEventListener("click", function (event) {
-          event.preventDefault();
           const pageName = link.textContent.trim();
-
           updateBreadcrumb(pageName);
-
-          console.log(`Navigated to ${pageName}`);
+          const href = link.getAttribute("href");
+          if (href && href !== "#") {
+            window.location.href = href;
+          }
         });
       });
     });
   </script>
   <!-- End breadcrumb -->
+
+
+  <!-- jump into living room -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const btnBuyNow = document.getElementById("btn-buy-now");
+
+      btnBuyNow.addEventListener("click", function () {
+        const livingRoomSection = document.getElementById("living-room");
+        livingRoomSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
+  </script>
+
+  <!-- End jump into living room -->
+
+
+  <!-- jump into all products -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const seeAllLinks = document.querySelectorAll(".see-all-link");
+      seeAllLinks.forEach(link => {
+        link.addEventListener("click", function (event) {
+          event.preventDefault();
+          window.location.href = "tatcasanpham.html";
+        });
+      });
+    });
+  </script>
+
+  <!-- End jump into all products -->
 
 </body>
 

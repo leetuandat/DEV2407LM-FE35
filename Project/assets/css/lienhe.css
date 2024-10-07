@@ -1,0 +1,185 @@
+/* Banner Introduce */
+.banner-introduce {
+  background-image: url(../images/lienhe/LIENHE-banner.jpg);
+  height: 50vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-introduce .inner-content {
+  text-align: center;
+}
+
+.banner-introduce .inner-content h2 {
+  color: white;
+  margin-top: 20px;
+  font-size: 48px;
+  font-family: "Gotham-Ultra";
+}
+
+.banner-introduce .inner-content .inner-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 992px) {
+  .banner-introduce {
+    height: 60vh;
+    padding: 20px;
+  }
+
+  .banner-introduce .inner-content h2 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner-introduce {
+    height: 70vh;
+  }
+
+  .banner-introduce .inner-content h2 {
+    font-size: 28px;
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .banner-introduce {
+    height: 80vh;
+  }
+
+  .banner-introduce .inner-content h2 {
+    font-size: 24px;
+    margin-top: 10px;
+  }
+
+  .banner-introduce .inner-content {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-introduce {
+    height: 90vh;
+  }
+
+  .banner-introduce .inner-content h2 {
+    font-size: 20px;
+  }
+}
+
+/* End Banner Introduce */
+
+/* Contact */
+.contact-section {
+    padding: 60px 0;
+    background-color: #f3f3f3;
+    position: relative;
+}
+
+.contact-section>.container {
+    background-color: #fff;
+    padding: 100px;
+    border-radius: 8px;
+    position: relative;
+    top: -100px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form {
+    border: 1px solid #bd945f;
+    padding: 30px;
+    border-radius: 8px;
+    background: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-form h3 {
+    font-size: 24px;
+    color: #bd945f;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    border: 1px solid #bd945f;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    background-color: #fff;
+    font-size: 14px;
+}
+
+.contact-form button {
+    background-color: #bd945f;
+    border: none;
+    color: white;
+    padding: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 130px;
+    font-size: 16px;
+}
+
+.contact-form button:hover {
+    background-color: #a57c47;
+}
+
+.inner-image {
+    height: auto;
+    max-width: 100%; 
+}
+
+.contact-image {
+    width: 100%;
+    height: 437px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+
+    .contact-section>.container {
+        padding: 0;
+    }
+
+    .contact-section .inner-image {
+        display: none;
+    }
+
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        top: -100px;
+    }
+
+    .contact-form {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .contact-image {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* End Contact */

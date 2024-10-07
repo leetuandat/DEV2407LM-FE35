@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tất cả sản phẩm</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <link rel="stylesheet" href="./assets/css/font.css" />
+  <link rel="stylesheet" href="./assets/css/layout.css" />
+  <!-- <link rel="stylesheet" href="./assets/css/sanpham.css" /> -->
+</head>
+<style>
+  .banner-section {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .carousel-item {
+    width: 100%;
+    height: 50vh;
+  }
+
+  .carousel-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .carousel-caption {
+    position: absolute;
+    top: 45%;
+    left: 60%;
+    transform: translateY(-50%);
+    text-align: left;
+    width: 30%;
+    z-index: 10;
+  }
+
+  .experience-image {
+    max-width: 300px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .carousel-caption h2 {
+    font-size: calc(24px + 2vw);
+    color: #2e3b52;
+    font-weight: bold;
+    margin-top: -30px;
+  }
+
+  .banner-section .btn-sanpham {
+    position: absolute;
+    top: 55%;
+    right: 15%;
+    z-index: 1000;
+    background-color: #fff;
+    color: #2e3b52;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .banner-section .btn-sanpham:hover {
+    background-color: #2e3b52;
+    color: #fff;
+  }
+
+  @media (max-width: 768px) {
+    .carousel-item {
+      width: 100%;
+      height: 30vh;
+    }
+
+    .carousel-caption {
+      top: 30%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      text-align: center;
+    }
+
+    .experience-image {
+      max-width: 200px;
+    }
+
+    .carousel-caption h2 {
+      font-size: calc(18px + 2vw);
+    }
+
+    .banner-section .btn-sanpham {
+      bottom: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (max-width: 400px) {
+    .carousel-item {
+      height: 38vh;
+      width: auto;
+    }
+  }
+
+  /* End Banner Section */
+
+  .product-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease-in-out;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background: #fff;
+  }
+
+  .bg123 {
+    background-color: #fff;
+    padding: 50px;
+  }
+
+  #product-container h2 {
+    font-size: 30px;
+    font-family: "Gotham-Ultra";
+    position: relative;
+    margin-bottom: 40px;
+  }
+
+  #product-container h2::before {
+    content: "";
+    height: 10px;
+    width: 150px;
+    background-color: #bd945f;
+    top: 100%;
+    position: absolute;
+  }
+
+  .product-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .product-card h4 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2e3b52;
+    margin-top: 15px;
+  }
+
+  .product-card .price {
+    font-size: 16px;
+    color: #d9534f;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+  .product-card .rating {
+    color: #ffd700;
+    margin: 5px 0;
+  }
+
+  .product-section {
+    background-color: #f3f3f3;
+    padding: 60px 0;
+  }
+
+  .filter-sort {
+    margin-bottom: 20px;
+  }
+
+  .dropdown-menu {
+    min-width: 150px;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .product-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+</style>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="row">
+        <div class="logo col-md-3 col-lg-5">
+          <img src="./assets/images/trangchu/logo.png" alt="" />
+        </div>
+        <div class="menu col-md-9 col-lg-7">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="trangchu.html">Trang chủ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="gioithieu.html">Giới thiệu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="sanpham.html">Sản phẩm</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="tintuc.html">Tin tức</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="doitac.html">Đối tác</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="lienhe.html">Liên hệ</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="inner-icon-mobi">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </div>
+  </header>
+
+  <nav aria-label="breadcrumb" class="breadcrumb-container">
+    <ol class="breadcrumb"></ol>
+  </nav>
+
+  <section class="banner-section position-relative">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./assets/images/sanpham/banner-sanpham.png" class="d-block w-100" alt="Banner 1" />
+          <div class="carousel-caption d-none d-md-block">
+            <img src="./assets/images/sanpham/text-banner.png" alt="Trải nghiệm" class="experience-image" />
+            <h2>Không gian hiện đại</h2>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="./assets/images/sanpham/banner-sanpham2.jpg" class="d-block w-100" alt="Banner 2" />
+          <div class="carousel-caption d-none d-md-block">
+            <img src="./assets/images/sanpham/text-banner.png" alt="Trải nghiệm" class="experience-image" />
+            <h2>Phong cách sang trọng</h2>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="./assets/images/sanpham/banner-sanpham3.jpg" class="d-block w-100" alt="Banner 3" />
+          <div class="carousel-caption d-none d-md-block">
+            <img src="./assets/images/sanpham/text-banner.png" alt="Trải nghiệm" class="experience-image" />
+            <h2>Sang trọng tinh tế</h2>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="./assets/images/sanpham/banner-sanpham4.jpg" class="d-block w-100" alt="Banner 4" />
+          <div class="carousel-caption d-none d-md-block">
+            <img src="./assets/images/sanpham/text-banner.png" alt="Trải nghiệm" class="experience-image" />
+            <h2>Phong cách tối giản</h2>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="./assets/images/sanpham/banner-sanpham5.jpg" class="d-block w-100" alt="Banner 5" />
+          <div class="carousel-caption d-none d-md-block">
+            <img src="./assets/images/sanpham/text-banner.png" alt="Trải nghiệm" class="experience-image" />
+            <h2>Hơi thở hiện đại</h2>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <button type="button" class="btn-banner btn-sanpham">
+      <div class="content">Mua ngay</div>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </section>
+
+
+  <section class="product-section">
+    <div class="container">
+      <div class="row filter-sort justify-content-between align-items-center">
+        <div class="col-md-6">
+          <span>Chọn mức giá: </span>
+          <button class="btn btn-outline-secondary btn-sm" onclick="filterByPrice(0, 5000000)">Dưới 5 triệu</button>
+          <button class="btn btn-outline-secondary btn-sm" onclick="filterByPrice(5000000, 10000000)">5 - 10
+            triệu</button>
+          <button class="btn btn-outline-secondary btn-sm" onclick="filterByPrice(10000000, 15000000)">10 - 15
+            triệu</button>
+          <button class="btn btn-outline-secondary btn-sm" onclick="filterByPrice(15000000, Infinity)">Trên 15
+            triệu</button>
+          <button class="btn btn-outline-secondary btn-sm" onclick="resetFilter()">Tất cả</button>
+        </div>
+        <div class="col-md-3 text-end">
+          <div class="dropdown">
+            <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="dropdownSort"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Sắp xếp
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownSort">
+              <li><a class="dropdown-item" href="#" onclick="sortProducts('newest')">Mới nhất</a></li>
+              <li><a class="dropdown-item" href="#" onclick="sortProducts('popularity')">Phổ biến nhất</a></li>
+              <li><a class="dropdown-item" href="#" onclick="sortProducts('price-desc')">Giá cao đến thấp</a></li>
+              <li><a class="dropdown-item" href="#" onclick="sortProducts('price-asc')">Giá thấp đến cao</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row bg123" id="product-container">
+        <h2>PHÒNG KHÁCH</h2>
+      </div>
+
+      <div class="pagination" id="pagination-container">
+
+      </div>
+    </div>
+  </section>
+
+
+  <footer>
+    <div class="container">
+      <div class="row justify-content-between">
+        <div class="col-xl-4 col-sm-12 first-column">
+          <h3>Thông Tin Chung</h3>
+          <h2>CÔNG TY TNHH HOÀNG HOAN</h2>
+          <div class="contact-details">
+            <p><i class="fas fa-phone"></i> 0999.999.999</p>
+            <p><i class="fas fa-envelope"></i> cskh@hoanghoan.vn</p>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> Số 1 Nguyễn Trãi, Thanh
+              Xuân, Hà Nội
+            </p>
+          </div>
+        </div>
+        <div class="col-xl-4 col-sm-12 second-column">
+          <div>
+            <h3>Về chúng tôi</h3>
+            <ul class="menu">
+              <li><a href="#">Giới thiệu</a></li>
+              <li><a href="#">Sản phẩm</a></li>
+              <li><a href="#">Tin tức</a></li>
+              <li><a href="#">Đối tác</a></li>
+              <li><a href="#">Liên hệ</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xl-4 col-sm-12 third-column">
+          <div>
+            <h3>Kết nối với chúng tôi</h3>
+            <div class="social-icons">
+              <a href="#" class="social-icon"><i class="fab fa-facebook-square"></i></a>
+              <a href="#" class="social-icon"><img src="./assets/images/trangchu/zalo.png" alt="Zalo" /></a>
+              <a href="mailto:cskh@hoanghoan.vn" class="social-icon"><i class="fas fa-envelope"></i></a>
+            </div>
+            <div class="verified-logo">
+              <img src="./assets/images/trangchu/bocongthuong.png" alt="Đã Thông Báo Bộ Công Thương" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+  <!-- header -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const menu = document.querySelector("header .menu");
+      const innerIconMobi = document.querySelector("header .inner-icon-mobi");
+
+      innerIconMobi.addEventListener("click", function () {
+        if (menu.classList.contains("active")) {
+          menu.classList.remove("active");
+          menu.classList.add("hide");
+        } else {
+          menu.classList.remove("hide");
+          menu.classList.add("active");
+        }
+        innerIconMobi.classList.toggle("rotate");
+      });
+    });
+  </script>
+  <!-- End header -->
+
+  <!-- breadcrumb -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const breadcrumbContainer = document.querySelector(".breadcrumb");
+      function updateBreadcrumb(currentPage) {
+        breadcrumbContainer.innerHTML = "";
+        const homeCrumb = document.createElement("li");
+        homeCrumb.className = "breadcrumb-item";
+        homeCrumb.innerHTML = `<a href="/">Trang chủ</a>`;
+        breadcrumbContainer.appendChild(homeCrumb);
+
+        const currentCrumb = document.createElement("li");
+        currentCrumb.className = "breadcrumb-item active";
+        currentCrumb.setAttribute("aria-current", "page");
+        currentCrumb.textContent = currentPage;
+        breadcrumbContainer.appendChild(currentCrumb);
+        localStorage.setItem("breadcrumb", JSON.stringify({ currentPage }));
+      }
+      const pathname = window.location.pathname;
+      let savedBreadcrumb = localStorage.getItem("breadcrumb");
+      let currentPage = "";
+      switch (pathname) {
+        case "/":
+          currentPage = "Trang chủ";
+          break;
+        case "/lienhe.html":
+          currentPage = "Liên hệ";
+          break;
+        case "/sanpham.html":
+          currentPage = "Sản phẩm";
+          break;
+        case "/tatcasanpham.html":
+          currentPage = "Tất cả sản phẩm";
+          break;
+        default:
+          currentPage = document.title || "Trang khác";
+          break;
+      }
+      if (!savedBreadcrumb || JSON.parse(savedBreadcrumb).currentPage !== currentPage) {
+        updateBreadcrumb(currentPage);
+      } else {
+        const { currentPage: savedCurrentPage } = JSON.parse(savedBreadcrumb);
+        updateBreadcrumb(savedCurrentPage);
+      }
+      const navLinks = document.querySelectorAll(".nav-link");
+      navLinks.forEach((link) => {
+        link.addEventListener("click", function (event) {
+          const pageName = link.textContent.trim();
+          updateBreadcrumb(pageName);
+          const href = link.getAttribute("href");
+          if (href && href !== "#") {
+            window.location.href = href;
+          }
+        });
+      });
+    });
+  </script>
+  <!-- End breadcrumb -->
+
+
+  <!-- Render product -->
+  <script>
+
+    const initialProducts = [
+      { name: 'Bàn Uống Nước', price: 8999000, image: './assets/images/tatcasanpham/ban-uong-nuoc.jpg', rating: 5, description: '(Size vừa, nâu đậm)' },
+      { name: 'Bàn Uống Nước 2', price: 3999000, image: './assets/images/tatcasanpham/ban-uong-nuoc-2.jpg', rating: 4, description: '(Size vừa, nâu vân gỗ)' },
+      { name: 'Kệ TV', price: 12999000, image: './assets/images/tatcasanpham/phong-khach-ke-ti-vi.png', rating: 4, description: '(4 ngăn, gỗ lim)' },
+      { name: 'Kệ Để Đồ', price: 2499000, image: './assets/images/tatcasanpham/ke-de-do.jpg', rating: 5, description: '(4 ngăn, trắng gỗ)' },
+      { name: 'Sofa', price: 8999000, image: './assets/images/tatcasanpham/Sofa.jpg', rating: 4, description: '(Size vừa, nâu xám đậm)' },
+      { name: 'Sofa 2', price: 3999000, image: './assets/images/tatcasanpham/sofa2.jpg', rating: 4, description: '(Size vừa, vải xanh dương)' },
+      { name: 'Kệ Để Đồ 2', price: 2499000, image: './assets/images/tatcasanpham/ke-do-2.jpg', rating: 5, description: '(2 ngăn, gỗ lim)' },
+      { name: 'Bàn Uống Nước 3', price: 12999000, image: './assets/images/tatcasanpham/ban-uong-nuoc-3.jpg', rating: 4, description: '(4 ngăn, trắng gỗ)' }
+    ];
+
+
+    const repeatCount = 5;
+    let products = [];
+
+
+    for (let i = 0; i < repeatCount; i++) {
+      initialProducts.forEach((product) => {
+        products.push({ ...product });
+      });
+    }
+
+    let filteredProducts = [...products];
+    const productsPerPage = 12;
+    let currentPage = 1;
+
+
+    function renderProducts(page = 1) {
+      const productContainer = document.getElementById('product-container');
+      productContainer.innerHTML = '<h2>PHÒNG KHÁCH</h2>';
+
+      const startIndex = (page - 1) * productsPerPage;
+      const endIndex = startIndex + productsPerPage;
+      const productsToShow = filteredProducts.slice(startIndex, endIndex);
+
+      productsToShow.forEach(product => {
+        const productCard = document.createElement('div');
+        productCard.classList.add('col-lg-3', 'col-md-4', 'col-sm-6', 'mb-4');
+
+        productCard.innerHTML = `
+              <div class="product-card">
+                  <img src="${product.image}" alt="${product.name}">
+                  <h4>${product.name}</h4>
+                  <div class="rating">${'★'.repeat(product.rating)}</div>
+                  <p>${product.description}</p>
+                  <p class="price">${product.price.toLocaleString('vi-VN')} VNĐ</p>
+              </div>
+          `;
+        productContainer.appendChild(productCard);
+      });
+
+      renderPagination();
+    }
+
+
+    function renderPagination() {
+      const paginationContainer = document.getElementById('pagination-container');
+      paginationContainer.innerHTML = '';
+
+      const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
+
+      for (let i = 1; i <= totalPages; i++) {
+        const button = document.createElement('button');
+        button.textContent = i;
+        if (i === currentPage) {
+          button.style.backgroundColor = '#bd945f';
+          button.style.color = '#fff';
+        }
+        button.addEventListener('click', () => {
+          currentPage = i;
+          renderProducts(currentPage);
+        });
+        paginationContainer.appendChild(button);
+      }
+    }
+
+
+    function filterByPrice(minPrice, maxPrice) {
+      filteredProducts = products.filter(product => product.price >= minPrice && product.price <= maxPrice);
+      currentPage = 1;
+      renderProducts(currentPage);
+    }
+
+
+    function resetFilter() {
+      filteredProducts = [...products];
+      currentPage = 1;
+      renderProducts(currentPage);
+    }
+
+    function sortProducts(type) {
+      if (type === 'price-asc') {
+        filteredProducts.sort((a, b) => a.price - b.price);
+      } else if (type === 'price-desc') {
+        filteredProducts.sort((a, b) => b.price - a.price);
+      } else if (type === 'popularity') {
+        filteredProducts.sort((a, b) => b.rating - a.rating);
+      } else if (type === 'newest') {
+        filteredProducts = [...products];
+      }
+      currentPage = 1;
+      renderProducts(currentPage);
+    }
+
+
+    renderProducts();
+
+  </script>
+  <!-- End Render product -->
+</body>
+
+</html>

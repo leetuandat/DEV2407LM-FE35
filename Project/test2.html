@@ -203,9 +203,7 @@
                 <h2>TIN TỨC</h2>
             </div>
             <div id="product-container"></div>
-            <ul class="pagination" id="pagination-container">
-
-            </ul>
+            <ul class="pagination" id="pagination-container"></ul>
         </div>
     </section>
 
@@ -289,61 +287,35 @@
     <!-- breadcrumb -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-          const breadcrumbContainer = document.querySelector(".breadcrumb");
-          function updateBreadcrumb(currentPage) {
-            breadcrumbContainer.innerHTML = "";
-            const homeCrumb = document.createElement("li");
-            homeCrumb.className = "breadcrumb-item";
-            homeCrumb.innerHTML = `<a href="/">Trang chủ</a>`;
-            breadcrumbContainer.appendChild(homeCrumb);
-    
-            const currentCrumb = document.createElement("li");
-            currentCrumb.className = "breadcrumb-item active";
-            currentCrumb.setAttribute("aria-current", "page");
-            currentCrumb.textContent = currentPage;
-            breadcrumbContainer.appendChild(currentCrumb);
-            localStorage.setItem("breadcrumb", JSON.stringify({ currentPage }));
-          }
-          const pathname = window.location.pathname;
-          let savedBreadcrumb = localStorage.getItem("breadcrumb");
-          let currentPage = "";
-          switch (pathname) {
-            case "/":
-              currentPage = "Trang chủ";
-              break;
-            case "/lienhe.html":
-              currentPage = "Liên hệ";
-              break;
-            case "/sanpham.html":
-              currentPage = "Sản phẩm";
-              break;
-            case "/tatcasanpham.html":
-              currentPage = "Tất cả sản phẩm";
-              break;
-            default:
-              currentPage = document.title || "Trang khác";
-              break;
-          }
-          if (!savedBreadcrumb || JSON.parse(savedBreadcrumb).currentPage !== currentPage) {
-            updateBreadcrumb(currentPage);
-          } else {
-            const { currentPage: savedCurrentPage } = JSON.parse(savedBreadcrumb);
-            updateBreadcrumb(savedCurrentPage);
-          }
-          const navLinks = document.querySelectorAll(".nav-link");
-          navLinks.forEach((link) => {
-            link.addEventListener("click", function (event) {
-              const pageName = link.textContent.trim();
-              updateBreadcrumb(pageName);
-              const href = link.getAttribute("href");
-              if (href && href !== "#") {
-                window.location.href = href;
-              }
+            const breadcrumbContainer = document.querySelector(".breadcrumb");
+            function updateBreadcrumb(currentPage) {
+                breadcrumbContainer.innerHTML = "";
+
+                const homeCrumb = document.createElement("li");
+                homeCrumb.className = "breadcrumb-item";
+                homeCrumb.innerHTML = `<a href="/">Trang chủ</a>`;
+                breadcrumbContainer.appendChild(homeCrumb);
+
+                const currentCrumb = document.createElement("li");
+                currentCrumb.className = "breadcrumb-item active";
+                currentCrumb.setAttribute("aria-current", "page");
+                currentCrumb.textContent = currentPage;
+                breadcrumbContainer.appendChild(currentCrumb);
+            }
+
+            const navLinks = document.querySelectorAll(".nav-link");
+            navLinks.forEach((link) => {
+                link.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    const pageName = link.textContent.trim();
+
+                    updateBreadcrumb(pageName);
+
+                    console.log(`Navigated to ${pageName}`);
+                });
             });
-          });
         });
-    
-      </script>
+    </script>
     <!-- End breadcrumb -->
 
     <!-- Render product -->
@@ -390,9 +362,6 @@
             productsToShow.forEach(product => {
                 const card = document.createElement("div");
                 card.className = "card";
-                card.onclick = () => {
-                    window.location.href = "baiviet.html"
-                }
                 const img = document.createElement("img");
                 img.src = product.imgSrc;
                 img.alt = product.title;
